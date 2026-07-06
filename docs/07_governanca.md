@@ -107,6 +107,29 @@ Bronze        Silver         Gold
                          Power BI
 ```
 
+A estratégia de permissões segue a seguinte organização:
+
+```text
+data_engineers
+ │
+├── Bronze
+├── Silver
+├── Gold
+├── CREATE
+├── MODIFY
+ └── SELECT
+
+bi_analysts
+ │
+├── Gold Tables
+ └── SELECT
+
+business_users
+ │
+├── Semantic Views
+ └── SELECT
+```
+
 ---
 
 ## ✅ Benefícios

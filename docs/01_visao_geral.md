@@ -103,7 +103,7 @@ A arquitetura implementada proporciona diversos benefícios técnicos e operacio
 
 
 ## 🛠️ Plataforma Tecnológica
-
+```
 
 
 | Categoria        | Tecnologia                                |

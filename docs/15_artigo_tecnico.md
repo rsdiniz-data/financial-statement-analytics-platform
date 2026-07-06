@@ -1,4 +1,4 @@
-# 6. Artigo Técnico – DRE | Medallion Architecture Databricks
+# 15. Artigo Técnico – DRE | Medallion Architecture Databricks
 
 Este artigo apresenta a construção de uma solução analítica para processamento da DRE da Embraer utilizando Databricks, PySpark, Delta Lake e Medallion Architecture.
 

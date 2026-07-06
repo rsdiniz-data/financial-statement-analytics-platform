@@ -87,27 +87,28 @@ A documentação completa da plataforma está organizada em documentos independe
 
 | Documento | Descrição |
 |-----------|-----------|
-| 📄 [01 - Visão Geral](./docs/01_visao_geral.md) | Contexto, objetivos e benefícios da plataforma |
-| 🏗️ [02 - Arquitetura da Solução](./docs/02_arquitetura.md) | Arquitetura lógica e componentes da plataforma |
-| ☁️ [03 - Infraestrutura Azure](./docs/03_infraestrutura_azure.md) | Recursos provisionados no Microsoft Azure |
-| ⚙️ [04 - Azure Databricks](./docs/04_databricks.md) | Organização do Workspace, Catálogos e Notebooks |
-| 🗄️ [05 - Data Lake](./docs/05_data_lake.md) | Estrutura de armazenamento e camadas Bronze, Silver e Gold |
-| 📊 [06 - Modelo Dimensional](./docs/06_modelo_dimensional.md) | Modelagem analítica e entidades da camada Gold |
-| 🔄 [07 - Azure Data Factory](./docs/07_data_factory.md) | Orquestração dos pipelines |
-| 🔐 [08 - Segurança e Governança](./docs/08_seguranca_governanca.md) | Unity Catalog, RBAC, ACL, SCIM e Key Vault |
-| ⚡ [09 - Delta Lake](./docs/09_delta_lake.md) | ACID, Time Travel, Version History e Restore |
-| 🚀 [10 - CI/CD](./docs/10_cicd.md) | GitHub, GitHub Actions e versionamento |
-| 📈 [11 - Power BI](./docs/11_power_bi.md) | Integração com ferramentas analíticas |
-| 📖 [12 - Guia de Implantação](./docs/12_implantacao.md) | Provisionamento do ambiente |
-| 📑 [13 - Inventário da Plataforma](./docs/13_inventario.md) | Recursos e convenções utilizadas |
+| 📄 [Visão Geral do Projeto](./docs/01_visao_geral.md) | Contexto, objetivos, justificativa e benefícios da plataforma. |
+| 🏗️ [Arquitetura da Solução](./docs/02_arquitetura.md) | Arquitetura lógica, componentes da plataforma e fluxo de dados. |
+| ⚙️ [Desenvolvimento do Projeto](./docs/03_desenvolvimento.md) | Implementação da solução, organização dos notebooks, pipelines de dados e processamento nas camadas Bronze, Silver e Gold. |
+| 📊 [Modelagem Dimensional](./docs/04_modelagem_dimensional.md) | Modelo dimensional, dimensões, fatos, relacionamentos e estrutura analítica da camada Gold. |
+| 🗂️ [Dicionário de Dados](./docs/05_dicionario_dados.md) | Descrição das tabelas, colunas, tipos de dados e regras de negócio implementadas. |
+| 🖥️ [Operação da Plataforma](./docs/06_operacao_plataforma.md) | Execução dos pipelines, monitoramento, validações operacionais e administração da plataforma. |
+| 🔐 [Governança de Dados](./docs/07_governanca.md) | Governança de dados, segurança, Unity Catalog, RBAC, ACL, SCIM e gerenciamento de credenciais. |
+| 🚀 [Runbook de Implantação](./docs/08_runbook_implantacao.md) | Procedimentos para provisionamento da infraestrutura, configuração do ambiente e implantação da solução. |
+| 🛠️ [Runbook Operacional](./docs/09_runbook_operacional.md) | Procedimentos operacionais, manutenção, monitoramento e suporte da plataforma. |
+| 🏷️ [Padrão de Nomenclatura](./docs/10_padrao_nomenclatura.md) | Convenções de nomenclatura adotadas para recursos Azure, Databricks, pipelines e objetos de dados. |
+| ✅ [Checklist de Implantação](./docs/11_checklist_implantacao.md) | Lista de verificação para validação da implantação completa da plataforma. |
+| 🧯 [Troubleshooting](./docs/12_troubleshooting.md) | Diagnóstico, resolução de problemas e tratamento dos principais cenários de falha. |
+| 💡 [Entrega de Valor](./docs/13_entrega_valor.md) | Benefícios técnicos, operacionais e de negócio proporcionados pela arquitetura da solução. |
+| 📑 [Apêndice A – Inventário dos Recursos da Plataforma](./docs/14_inventario.md) | Relação completa dos recursos provisionados no Azure, Azure Databricks, Azure Data Factory, Unity Catalog e GitHub, incluindo convenções de nomenclatura, finalidade e localização de cada artefato. |
 
 ---
 
 # 📄 Documentação Técnica
 
-Além da documentação modular disponível na pasta **docs**, o projeto disponibiliza um documento técnico consolidado contendo toda a arquitetura da solução, decisões de projeto, implementação dos pipelines e boas práticas adotadas durante o desenvolvimento.
+Além da documentação modular disponível na pasta **docs**, o projeto disponibiliza um documento técnico consolidado contendo a arquitetura completa da solução, decisões de projeto, implementação dos pipelines, governança, segurança e boas práticas adotadas durante o desenvolvimento.
 
-📄 **[Acessar documentação técnica](./docs/14_artigo_tecnico.md)**
+📄 **[Acessar documentação técnica](./docs/15_artigo_tecnico.md)**
 
 ---
 

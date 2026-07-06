@@ -103,30 +103,37 @@ A arquitetura implementada proporciona diversos benefícios técnicos e operacio
 
 
 ## 🛠️ Plataforma Tecnológica
-```
 
 
 | Categoria        | Tecnologia                                |
-
 | ---------------- | ----------------------------------------- |
-
 | Cloud            | Microsoft Azure                           |
-
 | Armazenamento    | Azure Data Lake Storage Gen2              |
-
 | Processamento    | Azure Databricks (Apache Spark / PySpark) |
-
 | Governança       | Unity Catalog                             |
-
 | Formato de Dados | Delta Lake                                |
-
 | Orquestração     | Azure Data Factory                        |
-
 | Segurança        | Microsoft Entra ID + Azure Key Vault      |
-
 | DevOps           | GitHub + GitHub Actions                   |
-
 | Analytics        | Power BI                                  |
+
+---
+
+## 🛠️ Componentes Tecnológicos
+
+| Categoria                   | Tecnologias                              |
+| --------------------------- | ---------------------------------------- |
+| Fonte de Dados              | SharePoint Online, Microsoft Excel       |
+| Processamento               | Azure Databricks, Apache Spark (PySpark) |
+| Armazenamento               | Azure Data Lake Storage Gen2, Delta Lake |
+| Governança                  | Unity Catalog                            |
+| Orquestração                | Azure Data Factory                       |
+| Gerenciamento de Segredos   | Azure Key Vault                          |
+| Gerenciamento de Identidade | Microsoft Entra ID                       |
+| Arquitetura                 | Data Lakehouse, Medallion Architecture   |
+| Modelagem Analítica         | Modelo Dimensional (Star Schema)         |
+| DevOps e DataOps            | Git, GitHub, GitHub Actions              |
+| Consumo Analítico           | Power BI                                 |
 
 
 

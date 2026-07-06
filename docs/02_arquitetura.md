@@ -40,7 +40,7 @@ Azure Databricks
 Power BI
 ```
 
-📷 ![Arquitetura](../images/modelo_dimensional.png)
+📷 ![Arquitetura](../images/arquitetura.png)
 
 ---
 

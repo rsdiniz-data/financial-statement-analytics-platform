@@ -73,7 +73,7 @@ Silver (Trusted)
 Gold (Business)
       │
       ▼
-Power BI
+Ferramentas de BI
 ```
 
 ---

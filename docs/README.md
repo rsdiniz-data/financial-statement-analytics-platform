@@ -1,27 +1,29 @@
 # 📄 Documentação do Projeto
 
-Esta pasta contém toda a documentação técnica e de negócio do projeto **Financial Statement Analytics Platform**, uma solução moderna de engenharia de dados baseada em Azure Databricks, Azure Data Factory e arquitetura Lakehouse.
+Esta pasta contém toda a documentação técnica e de negócio do projeto **Financial Statement Analytics Platform**, uma solução de engenharia de dados baseada em **Azure Databricks, Azure Data Factory e arquitetura Lakehouse (Medallion)**.
 
 ---
 
-## 📚 Estrutura
+## 📚 Estrutura da Documentação
 
-- [01. Justificativa](./01_justificativa.md)
-- [02. Arquitetura](./02_arquitetura.md)
-- [03. Desenvolvimento](./03_desenvolvimento.md)
-- [04. Dicionário de Dados](./04_dicionario_dados.md)
-- [05. Operação da Plataforma](./05_operacao_plataforma.md)
-- [06. Governança de Dados](./06_governanca_dados.md)
-- [07. Runbook de Implantação](./07_runbook_implantacao.md)
-- [08. Runbook Operacional](./08_runbook_operacional.md)
-- [09. Padrão de Nomenclatura](./09_padrao_nomenclatura.md)
-- [10. Checklist de Implantação](./10_checklist_implantacao.md)
-- [11. Troubleshooting](./11_troubleshooting.md)
-- [12. Entrega de Valor](./12_entrega_valor.md)
-- [13. Artigo Técnico](./13_artigo_tecnico.md)
+1. [Visão Geral do Projeto](./01_visao_geral.md)  
+2. [Arquitetura da Solução](./02_arquitetura.md)  
+3. [Desenvolvimento do Projeto](./03_desenvolvimento.md)  
+4. [Modelagem Dimensional](./04_modelagem_dimensional.md)  
+5. [Dicionário de Dados](./05_dicionario_dados.md)  
+6. [Operação da Plataforma](./06_operacao_plataforma.md)  
+7. [Governança de Dados](./07_governanca.md)  
+8. [Runbook de Implantação](./08_runbook_implantacao.md)  
+9. [Runbook Operacional](./09_runbook_operacional.md)  
+10. [Padrão de Nomenclatura](./10_padrao_nomenclatura.md)  
+11. [Checklist de Implantação](./11_checklist_implantacao.md)  
+12. [Troubleshooting](./12_troubleshooting.md)  
+13. [Entrega de Valor](./13_entrega_valor.md)  
+14. [Apêndice A – Inventário dos Recursos da Plataforma](./14_inventario.md)  
+15. [Artigo Técnico](./15_artigo_tecnico.md)  
 
 ---
 
 ## 🎯 Objetivo
 
-Garantir rastreabilidade completa entre negócio, arquitetura e implementação técnica, assegurando organização, padronização e facilidade de manutenção da documentação do projeto.
+Garantir organização, rastreabilidade e padronização da documentação, conectando de forma clara **negócio, arquitetura e implementação técnica** da plataforma.

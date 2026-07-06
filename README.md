@@ -4,7 +4,7 @@
 
 ---
 
-# 🧠 Visão Geral
+# 🧠 Sobre o Projeto
 
 O **Financial Statement Analytics Platform** é um projeto de Engenharia de Dados desenvolvido para demonstrar a construção de uma plataforma moderna de dados sobre o ecossistema Microsoft Azure, aplicando conceitos de Lakehouse, DataOps e Analytics Engineering.
 

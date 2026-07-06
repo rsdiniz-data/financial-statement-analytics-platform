@@ -80,6 +80,7 @@ O **Delta Lake** fornece recursos que garantem consistência, auditoria e recupe
 
 A estratégia de governança integra identidade, armazenamento, catálogo e controle de acesso.
 
+```text
 Microsoft Entra ID
         │
         ▼
@@ -104,6 +105,7 @@ Bronze        Silver         Gold
                               │
                               ▼
                          Power BI
+```text
 
 ---
 

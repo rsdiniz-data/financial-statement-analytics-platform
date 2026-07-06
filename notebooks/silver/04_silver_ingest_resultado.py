@@ -48,7 +48,6 @@ from pyspark.sql import functions as F
 # Referência:
 # - docs/07_governanca.md → Gestão de identidades, RBAC e Secret Scopes
 # - docs/08_runbook_implantacao.md → Integração com Azure Key Vault
-# - docs/15_artigo_tecnico.md → 3.7.4.1 Configuração do ambiente
 #
 # Objetivo de negócio:
 # - Centralizar parâmetros do ambiente
@@ -96,7 +95,6 @@ SILVER_TABLE_NAME = "resultado"
 # Referência:
 # - docs/02_arquitetura.md → Separação entre camadas Medallion
 # - docs/03_desenvolvimento.md → Estrutura da camada Silver
-# - docs/15_artigo_tecnico.md → 3.7.4.2 Definição dos caminhos
 #
 # Objetivo técnico:
 # - Separar armazenamento físico da camada lógica

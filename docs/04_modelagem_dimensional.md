@@ -20,9 +20,7 @@ A solução adota o padrão **Star Schema**, composto por uma tabela fato centra
 | `d_plano_conta` | Dimensão | Estrutura hierárquica do plano de contas         |
 | `d_calendario`  | Dimensão | Atributos temporais para análises                |
 
-📷 **Figura 1 – Modelo Dimensional**
-
-📷 ![**Figura 1 – Modelo Dimensional**](../images/modelo_dimensional.png)
+📷 ![Modelo](../images/modelo_dimensional.png)
 
 ---
 

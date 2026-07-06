@@ -1,34 +1,18 @@
 # 1. Visão Geral do Projeto
 
-
-
 ## 🎯 Contexto
-
-
 
 O **Financial Statement Analytics Platform** demonstra a construção de uma plataforma moderna de Engenharia de Dados utilizando serviços do **Microsoft Azure** para automatizar a ingestão, o processamento, a governança e a disponibilização de informações financeiras.
 
-
-
 A solução processa dados da **Demonstração do Resultado do Exercício (DRE)** a partir de arquivos Microsoft Excel armazenados no **SharePoint Online**, organizando o pipeline segundo a **Arquitetura Medallion** (Bronze, Silver e Gold) até a publicação de um modelo dimensional otimizado para ferramentas de Business Intelligence.
-
-
 
 Além dos pipelines de dados, o projeto implementa práticas modernas de governança, segurança, DataOps e automação, utilizando serviços nativos da plataforma Azure.
 
-
-
 ---
-
-
 
 ## 🎯 Objetivos
 
-
-
 O projeto foi desenvolvido com os seguintes objetivos:
-
-
 
 * Construir uma plataforma de dados baseada em arquitetura Lakehouse.
 
@@ -46,39 +30,23 @@ O projeto foi desenvolvido com os seguintes objetivos:
 
 * Aplicar práticas de DevOps e DataOps utilizando GitHub e GitHub Actions.
 
-
-
 ---
 
 
 
 ## 💡 Justificativa
 
-
-
 Organizações que utilizam planilhas eletrônicas como fonte de informações financeiras enfrentam desafios relacionados à padronização, rastreabilidade, segurança e escalabilidade dos processos analíticos.
-
-
 
 Para solucionar esse cenário, foi desenvolvida uma arquitetura baseada em **Lakehouse**, separando claramente as etapas de ingestão, transformação e consumo dos dados.
 
-
-
 Essa abordagem aumenta a confiabilidade das informações, fortalece a governança dos dados e prepara a plataforma para evolução e integração com novos cenários analíticos.
-
-
 
 ---
 
-
-
 ## 🚀 Benefícios da Solução
 
-
-
 A arquitetura implementada proporciona diversos benefícios técnicos e operacionais, entre eles:
-
-
 
 * Automação dos pipelines de dados.
 
@@ -96,11 +64,7 @@ A arquitetura implementada proporciona diversos benefícios técnicos e operacio
 
 * Integração com Power BI para consumo analítico.
 
-
-
 ---
-
-
 
 ## 🛠️ Plataforma Tecnológica
 
@@ -119,34 +83,11 @@ A arquitetura implementada proporciona diversos benefícios técnicos e operacio
 
 ---
 
-## 🛠️ Componentes Tecnológicos
-
-| Categoria                   | Tecnologias                              |
-| --------------------------- | ---------------------------------------- |
-| Fonte de Dados              | SharePoint Online, Microsoft Excel       |
-| Processamento               | Azure Databricks, Apache Spark (PySpark) |
-| Armazenamento               | Azure Data Lake Storage Gen2, Delta Lake |
-| Governança                  | Unity Catalog                            |
-| Orquestração                | Azure Data Factory                       |
-| Gerenciamento de Segredos   | Azure Key Vault                          |
-| Gerenciamento de Identidade | Microsoft Entra ID                       |
-| Arquitetura                 | Data Lakehouse, Medallion Architecture   |
-| Modelagem Analítica         | Modelo Dimensional (Star Schema)         |
-| DevOps e DataOps            | Git, GitHub, GitHub Actions              |
-| Consumo Analítico           | Power BI                                 |
-
-
-
 A plataforma adota a **Arquitetura Medallion**, estruturando o Data Lake nas camadas Bronze, Silver e Gold, enquanto a camada Gold disponibiliza um modelo dimensional otimizado para análises corporativas.
-
-
 
 ---
 
-
-
 ## 🔗 Rastreabilidade
-
 
 
 * 🏗️ [Arquitetura da Solução](./02_arquitetura.md)

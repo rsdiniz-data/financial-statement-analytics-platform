@@ -1,81 +1,84 @@
 # 13. Entrega de Valor
 
+---
+
 ## 🧠 Governança e Confiabilidade
 
-- Dados centralizados em arquitetura Medallion no Databricks  
-- Governança através do Unity Catalog  
-- Maior rastreabilidade entre ingestão, transformação e consumo  
-- Padronização e controle das entidades analíticas  
+- Centralização dos dados na arquitetura Medallion  
+- Governança aplicada via Unity Catalog  
+- Rastreabilidade completa do fluxo de dados (Bronze → Silver → Gold)  
+- Padronização das entidades analíticas  
 
 ---
 
 ## ⚙️ Automação e Operação
 
-- Pipeline organizado em notebooks por camada  
-- Execução encadeada das etapas Bronze, Silver e Gold  
-- Redução de processos manuais e retrabalho  
-- Facilidade para reprocessamentos e manutenção operacional  
+- Orquestração do pipeline via Azure Data Factory  
+- Execução sequencial e controlada dos notebooks  
+- Redução de processos manuais  
+- Facilidade de reprocessamento e manutenção  
 
 ---
 
-## 🔄 Flexibilidade de Consumo
+## 🔄 Consumo Analítico Simplificado
 
-- Arquitetura agnóstica de ferramenta de BI  
-- Integração simplificada com Power BI e outras soluções analíticas  
-- Reutilização das mesmas entidades analíticas em múltiplos cenários  
-- Menor dependência tecnológica  
-
----
-
-## 💰 Eficiência e Custo
-
-- Uso de Delta Lake para otimização de leitura e escrita  
-- Particionamento físico por ano  
-- Pipelines desacoplados para reduzir processamento desnecessário  
-- Melhor aproveitamento computacional em ambiente cloud  
+- Disponibilização de views semânticas na camada Gold  
+- Integração direta com Power BI via SQL Warehouse  
+- Reutilização de entidades em múltiplos dashboards  
+- Abstração da complexidade técnica para o usuário final  
 
 ---
 
-## ⚡ Escalabilidade e Performance
+## 💰 Eficiência e Otimização de Custos
 
-- Processamento distribuído utilizando PySpark  
-- Melhor desempenho em consultas analíticas  
-- Arquitetura preparada para crescimento de volume  
-- Facilidade de inclusão de novos períodos e fontes de dados  
+- Uso de Delta Lake para eficiência de leitura e escrita  
+- Separação entre armazenamento e processamento  
+- Redução de processamento redundante  
+- Estrutura otimizada para ambientes cloud  
+
+---
+
+## ⚡ Performance e Escalabilidade
+
+- Processamento distribuído com PySpark  
+- Arquitetura preparada para crescimento de dados  
+- Consultas otimizadas na camada Gold  
+- Facilidade de expansão para novas fontes e períodos  
 
 ---
 
 ## 🧩 Reuso e Desacoplamento
 
-- Publicação em tabelas Delta e views semânticas  
-- Separação entre processamento e consumo analítico  
-- Dados reutilizáveis em diferentes pipelines e dashboards  
-- Flexibilidade para evolução futura da solução  
+- Separação clara entre ingestão, transformação e consumo  
+- Uso de tabelas Delta e views semânticas  
+- Reutilização das mesmas entidades em diferentes cenários analíticos  
+- Baixo acoplamento entre camadas da arquitetura  
 
 ---
 
-## 🏗️ Arquitetura Moderna
+## 🏗️ Arquitetura Moderna de Dados
 
-- Implementação do padrão Medallion (Bronze, Silver e Gold)  
-- Separação clara entre ingestão, tratamento e consumo  
-- Facilidade de manutenção, auditoria e reprocessamento  
-- Arquitetura aderente às boas práticas de Engenharia de Dados  
+- Implementação da arquitetura Medallion (Bronze, Silver, Gold)  
+- Integração entre Databricks, Delta Lake e Azure Data Factory  
+- Estrutura modular e facilmente evolutiva  
+- Aderência às boas práticas de engenharia de dados em cloud  
 
 ---
 
-## 🎯 Resultado
+## 🎯 Resultado Final
 
-O projeto consolidou uma arquitetura moderna de dados utilizando:
+A solução entrega uma plataforma completa de dados corporativos baseada em:
 
-- Databricks  
+- Azure Databricks  
 - PySpark  
 - Delta Lake  
 - Unity Catalog  
-- Medallion Architecture  
+- Azure Data Factory  
 
-Entregando uma solução:
+Com características de:
 
-- Escalável  
-- Governada  
-- Reutilizável  
-- Preparada para consumo analítico corporativo  
+- Escalabilidade  
+- Governança  
+- Automação  
+- Reutilização  
+- Pronta para consumo analítico corporativo  

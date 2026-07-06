@@ -105,7 +105,7 @@ Bronze        Silver         Gold
                               │
                               ▼
                          Power BI
-```text
+```
 
 ---
 

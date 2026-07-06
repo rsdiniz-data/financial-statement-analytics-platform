@@ -1,40 +1,42 @@
-# 15. Artigo Técnico – DRE | Medallion Architecture Databricks
+# 📝 15. Artigo Técnico — Financial Statement Analytics Platform
 
-Este artigo apresenta a construção de uma solução analítica para processamento da DRE da Embraer utilizando Databricks, PySpark, Delta Lake e Medallion Architecture.
-
----
-
-## 🔗 Acesse o artigo completo
-
-👉 [Ler no LinkedIn](https://www.linkedin.com/pulse/construindo-uma-arquitetura-medallion-databricks-para-ricardo-diniz-pflif)
+Este artigo apresenta a construção da solução **Financial Statement Analytics Platform**, uma arquitetura analítica moderna baseada em **Azure Databricks, Azure Data Factory, Delta Lake e Medallion Architecture**, aplicada ao processamento e análise de demonstrações financeiras.
 
 ---
 
-## 🧠 O que você vai encontrar no artigo
+## 🔗 Acesso ao artigo
 
-- Arquitetura Medallion (Bronze, Silver e Gold)  
-- Construção dos pipelines de dados em PySpark  
-- Processamento distribuído com Databricks  
-- Regras de negócio aplicadas na DRE  
-- Modelagem analítica dimensional  
-- Estratégias de governança, performance e escalabilidade  
-- Publicação das entidades analíticas para consumo em BI  
+👉 [Ler no LinkedIn](https://www.linkedin.com/...)
+
+---
+
+## 🧠 Principais temas abordados
+
+- Arquitetura Lakehouse com padrão Medallion (Bronze, Silver e Gold)  
+- Orquestração de pipelines com Azure Data Factory  
+- Processamento de dados com PySpark no Azure Databricks  
+- Modelagem dimensional para análise financeira (DRE)  
+- Uso do Delta Lake com garantias ACID e Time Travel  
+- Governança de dados com Unity Catalog e RBAC  
+- Camada semântica para consumo analítico em BI  
+- Integração com Microsoft Power BI  
 
 ---
 
 ## 🔄 Relação com este repositório
 
-Este repositório contém a implementação prática da solução apresentada no artigo:
+Este repositório contém a **implementação completa da solução apresentada no artigo**, incluindo:
 
-- Notebooks Bronze, Silver e Gold  
-- Processamentos em PySpark  
-- Estruturação das tabelas dimensionais e fatos  
-- Publicação no Unity Catalog  
-- Views semânticas para BI  
-- Integração com Power BI  
+- Pipelines de ingestão, transformação e publicação (Bronze, Silver e Gold)  
+- Notebooks organizados por camada e governança  
+- Estrutura de tabelas dimensionais e fato  
+- Publicação e governança via Unity Catalog  
+- Views semânticas para consumo analítico  
+- Orquestração automatizada no Azure Data Factory  
+- Integração com Power BI via SQL Warehouse  
 
 ---
 
 ## 🎯 Objetivo do Artigo
 
-O artigo complementa este repositório ao apresentar os conceitos, decisões técnicas e arquitetura utilizados na construção da solução analítica em Data Lake.
+Demonstrar a construção de uma plataforma moderna de dados financeiros, conectando arquitetura, engenharia de dados e consumo analítico em uma solução escalável, governada e automatizada em ambiente Azure.

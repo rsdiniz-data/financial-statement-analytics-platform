@@ -111,23 +111,23 @@ A estratégia de permissões segue a seguinte organização:
 
 ```text
 data_engineers
- │
+│
 ├── Bronze
 ├── Silver
 ├── Gold
 ├── CREATE
 ├── MODIFY
- └── SELECT
+└── SELECT
 
 bi_analysts
- │
+│
 ├── Gold Tables
- └── SELECT
+└── SELECT
 
 business_users
- │
+│
 ├── Semantic Views
- └── SELECT
+└── SELECT
 ```
 
 ---

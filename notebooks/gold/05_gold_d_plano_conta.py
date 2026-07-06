@@ -49,7 +49,6 @@ from pyspark.sql import functions as F
 #
 # Referência:
 # - docs/07_governanca.md → Unity Catalog e Governança
-# - docs/15_artigo_tecnico.md → 3.7.5.1 Configuração do ambiente
 #
 # Objetivo de negócio:
 # - Centralizar configurações da plataforma
@@ -99,7 +98,6 @@ SEMANTIC_VIEW_NAME = "vw_d_plano_conta"
 # Referência:
 # - docs/02_arquitetura.md → Camadas Silver e Gold
 # - docs/03_desenvolvimento.md → Publicação Gold
-# - docs/15_artigo_tecnico.md → 3.7.5.1 Configuração do ambiente
 #
 # Objetivo técnico:
 # - Definir origem lógica e destino físico
@@ -152,7 +150,7 @@ log("Iniciando publicação Gold - Dimensão Plano de Contas")
 # Referência:
 # - docs/03_desenvolvimento.md → Camada Silver (dados tratados)
 # - docs/02_arquitetura.md → Fluxo Silver → Gold
-# - docs/15_artigo_tecnico.md → 3.7.5.2 Consumo da camada Silver
+# - docs/15_artigo_tecnico.md → 3.7.5.1 Consumo da camada Silver
 #
 # Objetivo de negócio:
 # - Consumir dados já tratados e validados
@@ -297,28 +295,8 @@ spark.sql(f"""
 REFRESH TABLE {GOLD_TABLE}
 """)
 
-
 # =========================================================
-# 11. VALIDAÇÃO FINAL
-# =========================================================
-#
-# Referência:
-# - docs/06_operacao_plataforma.md → Validação de cargas
-# - docs/15_artigo_tecnico.md → 3.7.5.6 Validação final
-#
-# Objetivo de negócio:
-# - Garantir integridade da publicação
-# - Validar volume de registros processados
-# - Suportar monitoramento operacional
-#
-# =========================================================
-
-record_count = df_gold.count()
-
-log(f"Quantidade de registros: {record_count}")
-
-# =========================================================
-# 12. CRIAÇÃO DA VIEW SEMÂNTICA
+# 11. CRIAÇÃO DA VIEW SEMÂNTICA
 # =========================================================
 #
 # Referência:
@@ -353,6 +331,24 @@ SELECT
 FROM {GOLD_TABLE}
 """)
 
+# =========================================================
+# 11. VALIDAÇÃO FINAL
+# =========================================================
+#
+# Referência:
+# - docs/06_operacao_plataforma.md → Validação de cargas
+# - docs/15_artigo_tecnico.md → 3.7.5.6 Validação final
+#
+# Objetivo de negócio:
+# - Garantir integridade da publicação
+# - Validar volume de registros processados
+# - Suportar monitoramento operacional
+#
+# =========================================================
+
+record_count = df_gold.count()
+
+log(f"Quantidade de registros: {record_count}")
 
 # =========================================================
 # 13. FINALIZAÇÃO DO PROCESSO

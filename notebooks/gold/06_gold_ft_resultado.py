@@ -1,95 +1,179 @@
 # =========================================================
-# 🔹 06_GOLD_INGEST_FT_RESULTADO
-# Projeto: DRE | Medallion Architecture Databricks
+# 🔹 06_GOLD_FT_RESULTADO
+# Projeto: Financial Statement Analytics Platform
 #
 # Objetivo:
-# - Construir tabela fato ft_resultado
-# - Aplicar regra dinâmica dos últimos 3 períodos
-# - Integrar com plano de contas (dimensão)
-# - Filtrar apenas contas analíticas
-# - Persistir camada Gold particionada por ano
-# - Publicar tabela no Unity Catalog
-# - Expor view semântica para BI
+# - Construção da tabela fato de resultado financeiro (ft_resultado)
+# - Integração com dimensão Plano de Contas
+# - Aplicação de regras dinâmicas de período
+# - Filtragem de contas analíticas
+# - Persistência na camada Gold (Delta Lake)
+# - Registro no Unity Catalog
+# - Criação de view semântica para BI
 #
 # Pipeline:
-# Silver → Gold (Delta Table + View)
+# Silver (Delta Lake) → Gold (Delta Lake) → Unity Catalog → BI View
 #
 # 🔗 Rastreabilidade:
-# - Documento técnico: ../docs/03_desenvolvimento.md
-# - Artigo: ../docs/06_artigo_tecnico.md
-#   3.7 Desenvolvimento dos notebooks em PySpark
-#   3.7.6 Notebook 06 – Ingestão Gold de ftResultado
 #
-# - Arquitetura:
-#   ../docs/02_arquitetura.md → Camada Gold (Fact Table)
-#   ../docs/02_arquitetura.md → Modelo Dimensional (Star Schema)
+# 📄 Documento técnico:
+# - ../docs/03_desenvolvimento.md → Camada Gold e Modelagem Dimensional
+#
+# 📄 Arquitetura:
+# - ../docs/02_arquitetura.md → Modelo Dimensional e Camada Gold
+#
+# 📄 Governança:
+# - ../docs/07_governanca.md → Unity Catalog, RBAC e Data Governance
+#
+# 📄 Runbook de Implantação:
+# - ../docs/08_runbook_implantacao.md → Databricks Setup e Governança
+#
+# 📄 Artigo técnico:
+# - ../docs/15_artigo_tecnico.md
+#   3.7 Desenvolvimento dos notebooks em PySpark
+#   3.7.6 Notebook 06 – Fato Resultado
+#
+# =========================================================
+
+
+# =========================================================
+# 1. IMPORTS
 # =========================================================
 
 from pyspark.sql import functions as F
 from pyspark.sql.window import Window
 
+
 # =========================================================
-# 1. PATHS E OBJETOS
+# 2. CONFIGURAÇÕES (SECRETS / GOVERNANÇA)
 # =========================================================
+#
 # Referência:
-# - 3.7.6.1 → Leitura das camadas Silver
-# - docs/02_arquitetura.md → Camada Silver / Gold
+# - docs/07_governanca.md → Unity Catalog e Secret Scopes
+# - docs/08_runbook_implantacao.md → Azure Key Vault
+#
 
-GOLD_PATH = "/Volumes/finance_dre/gold/dre_volume/ft_resultado"
+SECRET_SCOPE = "ss-finance-dre-kv"
 
-GOLD_TABLE = "finance_dre.gold.ft_resultado"
-GOLD_VIEW = "finance_dre.gold.ftResultado"
-
-# =========================================================
-# 2. LOG
-# =========================================================
-
-def log(msg):
-    print(f"[INFO] {msg}")
-
-log("Iniciando Gold ft_resultado (Hybrid Pattern)")
-
-# =========================================================
-# 3. LEITURA DAS CAMADAS SILVER
-# =========================================================
-# Referência:
-# - 3.7.6.1 → Consumo das camadas Silver
-
-df_resultado = spark.read.format("delta").load(
-    "/Volumes/finance_dre/silver/dre_volume/resultado"
+STORAGE_ACCOUNT = dbutils.secrets.get(
+    scope=SECRET_SCOPE,
+    key="storage-account-name"
 )
 
-df_plano = spark.read.format("delta").load(
-    "/Volumes/finance_dre/silver/dre_volume/plano_conta"
+SILVER_CATALOG = dbutils.secrets.get(
+    scope=SECRET_SCOPE,
+    key="silver-catalog"
 )
 
+SILVER_SCHEMA = dbutils.secrets.get(
+    scope=SECRET_SCOPE,
+    key="silver-schema"
+)
+
+GOLD_CATALOG = dbutils.secrets.get(
+    scope=SECRET_SCOPE,
+    key="gold-catalog"
+)
+
+GOLD_SCHEMA = dbutils.secrets.get(
+    scope=SECRET_SCOPE,
+    key="gold-schema"
+)
+
+RESULTADO_TABLE_NAME = "resultado"
+PLANO_CONTA_TABLE_NAME = "plano_conta"
+
+GOLD_TABLE_NAME = "ft_resultado"
+SEMANTIC_VIEW_NAME = "vw_ft_resultado"
+
+
 # =========================================================
-# 4. FILTRO DINÂMICO - ÚLTIMOS 3 PERÍODOS
+# 3. PATHS E OBJETOS
 # =========================================================
+#
 # Referência:
-# - 3.7.6.2 → Filtro dinâmico de períodos
-# - docs/05_entrega_valor.md → Automação e escalabilidade
+# - Camada Gold (Delta Lake)
+#
 
-window_data = Window.orderBy(F.col("data_referencia").desc())
+GOLD_PATH = (
+    f"abfss://gold@{STORAGE_ACCOUNT}.dfs.core.windows.net/"
+    f"{GOLD_TABLE_NAME}"
+)
 
-df_resultado_filtrado = (
+RESULTADO_TABLE = (
+    f"{SILVER_CATALOG}.{SILVER_SCHEMA}.{RESULTADO_TABLE_NAME}"
+)
+
+PLANO_CONTA_TABLE = (
+    f"{SILVER_CATALOG}.{SILVER_SCHEMA}.{PLANO_CONTA_TABLE_NAME}"
+)
+
+GOLD_TABLE = (
+    f"{GOLD_CATALOG}.{GOLD_SCHEMA}.{GOLD_TABLE_NAME}"
+)
+
+SEMANTIC_VIEW = (
+    f"{GOLD_CATALOG}.{GOLD_SCHEMA}.{SEMANTIC_VIEW_NAME}"
+)
+
+
+# =========================================================
+# 4. LOG OPERACIONAL
+# =========================================================
+
+def log(message):
+    print(f"[INFO] {message}")
+
+
+log("Iniciando publicação Gold - Fato Resultado")
+
+
+# =========================================================
+# 5. LEITURA DA CAMADA SILVER
+# =========================================================
+#
+# Objetivo:
+# - Consumir dados tratados e governados
+#
+
+log("Lendo tabelas da camada Silver...")
+
+df_resultado = spark.table(RESULTADO_TABLE)
+df_plano = spark.table(PLANO_CONTA_TABLE)
+
+
+# =========================================================
+# 6. FILTRO DE PERÍODOS RECENTES
+# =========================================================
+#
+# Objetivo:
+# - Selecionar automaticamente os últimos períodos
+#
+
+log("Selecionando últimos períodos...")
+
+window_spec = Window.orderBy(F.col("data_referencia").desc())
+
+df_resultado = (
     df_resultado
-    .withColumn(
-        "rank_data",
-        F.dense_rank().over(window_data)
-    )
-    .filter(F.col("rank_data") <= 3)
-    .drop("rank_data")
+    .withColumn("rank_periodo", F.dense_rank().over(window_spec))
+    .filter(F.col("rank_periodo") <= 3)
+    .drop("rank_periodo")
 )
 
+
 # =========================================================
-# 5. JOIN COM PLANO DE CONTAS
+# 7. INTEGRAÇÃO COM DIMENSÃO PLANO DE CONTAS
 # =========================================================
-# Referência:
-# - 3.7.6.3 → Integração com Plano de Contas
+#
+# Objetivo:
+# - Aplicar regras contábeis da dimensão
+#
+
+log("Integrando com Plano de Contas...")
 
 df_join = (
-    df_resultado_filtrado.alias("r")
+    df_resultado.alias("r")
     .join(
         df_plano.select("id_conta", "lancamento").alias("p"),
         F.col("r.codigo_da_conta") == F.col("p.id_conta"),
@@ -97,88 +181,137 @@ df_join = (
     )
 )
 
-# =========================================================
-# 6. MODELO BASE DA FATO
-# =========================================================
-# Referência:
-# - 3.7.6.4 → Construção da estrutura da fato
 
-df_base = df_join.select(
-    F.col("r.codigo_da_conta").alias("id_conta"),
-    F.col("r.data_referencia").alias("data"),
-    F.col("r.valor"),
-    F.col("r.ano"),
-    F.col("p.lancamento")
+# =========================================================
+# 8. FILTRO DE CONTAS ANALÍTICAS
+# =========================================================
+#
+# Objetivo:
+# - Manter apenas contas lançáveis
+#
+
+log("Filtrando contas analíticas...")
+
+df_fact = df_join.filter(F.col("lancamento") == 1)
+
+
+# =========================================================
+# 9. MODELAGEM DA FATO
+# =========================================================
+#
+# Objetivo:
+# - Estruturar tabela fato final
+#
+
+log("Construindo modelo da fato...")
+
+df_fact = (
+    df_fact.select(
+        F.col("codigo_da_conta").alias("id_conta"),
+        F.col("data_referencia").alias("data"),
+        F.col("valor"),
+        F.col("ano")
+    )
 )
 
-# =========================================================
-# 7. FILTRO DE NEGÓCIO (CONTAS ANALÍTICAS)
-# =========================================================
-# Referência:
-# - 3.7.6.5 → Regra de contas analíticas
-
-df_base = df_base.filter(F.col("lancamento") == 1)
 
 # =========================================================
-# 8. MODELO FINAL DA FATO
+# 10. QUALIDADE DOS DADOS
 # =========================================================
-# Referência:
-# - 3.7.6.6 → Modelagem física final
 
-df_final = df_base.drop("lancamento")
+df_fact = df_fact.dropDuplicates()
+
 
 # =========================================================
-# 9. GRAVAÇÃO GOLD FÍSICA (VOLUME)
+# 11. METADADOS DE GOVERNANÇA
 # =========================================================
-# Referência:
-# - 3.7.6.7 → Persistência física da Gold
+#
+# Objetivo:
+# - Auditoria e rastreabilidade
+#
 
-log("Gravando Gold físico (Delta Volume)...")
+df_fact = df_fact.withColumn(
+    "_gold_timestamp",
+    F.current_timestamp()
+)
 
-df_final.write \
-    .mode("overwrite") \
-    .format("delta") \
-    .partitionBy("ano") \
+
+# =========================================================
+# 12. PERSISTÊNCIA NA CAMADA GOLD
+# =========================================================
+#
+# Objetivo:
+# - Armazenamento otimizado em Delta Lake
+#
+
+log("Persistindo camada Gold...")
+
+(
+    df_fact.write
+    .format("delta")
+    .mode("overwrite")
+    .partitionBy("ano")
     .save(GOLD_PATH)
+)
+
 
 # =========================================================
-# 10. PUBLICAÇÃO GOLD (UNITY CATALOG)
+# 13. REGISTRO NO UNITY CATALOG
 # =========================================================
-# Referência:
-# - 3.7.6.8 → Publicação governada
+#
+# Objetivo:
+# - Governança centralizada
+#
 
-log("Publicando tabela Gold no Unity Catalog...")
+log("Registrando no Unity Catalog...")
 
-df_final.write \
-    .mode("overwrite") \
-    .format("delta") \
-    .partitionBy("ano") \
-    .saveAsTable(GOLD_TABLE)
+spark.sql(f"""
+CREATE TABLE IF NOT EXISTS {GOLD_TABLE}
+USING DELTA
+LOCATION '{GOLD_PATH}'
+""")
+
+spark.sql(f"REFRESH TABLE {GOLD_TABLE}")
+
 
 # =========================================================
-# 11. VIEW SEMÂNTICA (BI LAYER)
+# 14. CRIAÇÃO DA VIEW SEMÂNTICA
 # =========================================================
-# Referência:
-# - 3.7.6.9 → Criação da view semântica
+#
+# Objetivo:
+# - Camada amigável para BI
+#
 
 log("Criando view semântica...")
 
 spark.sql(f"""
-CREATE OR REPLACE VIEW {GOLD_VIEW} AS
+CREATE OR REPLACE VIEW {SEMANTIC_VIEW} AS
+
 SELECT
     id_conta AS `ID Conta`,
     data     AS `Data`,
     valor    AS `Valor`
 FROM {GOLD_TABLE}
-ORDER BY
-    `Data`,
-    `ID Conta`
+ORDER BY data, id_conta
 """)
 
-# =========================================================
-# 12. FINALIZAÇÃO
-# =========================================================
-# Referência:
-# - 3.7.6.10 → Estratégia Hybrid Enterprise
 
-log("Gold ft_resultado finalizado com sucesso")
+# =========================================================
+# 15. VALIDAÇÃO FINAL
+# =========================================================
+
+record_count = df_fact.count()
+
+log(f"Registros processados: {record_count}")
+
+
+# =========================================================
+# 16. FINALIZAÇÃO
+# =========================================================
+
+log("Processo Gold Fato Resultado finalizado com sucesso")
+
+print(f"Tabela: {GOLD_TABLE}")
+print(f"View: {SEMANTIC_VIEW}")
+print(f"Path: {GOLD_PATH}")
+print(f"Registros: {record_count}")

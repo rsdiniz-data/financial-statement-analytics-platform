@@ -40,7 +40,7 @@ Azure Databricks
 Power BI
 ```
 
-📷 **Figura 1 – Arquitetura da Solução**
+📷 ![Arquitetura](../images/modelo_dimensional.png)
 
 ---
 
@@ -117,7 +117,7 @@ A camada Gold disponibiliza um modelo dimensional otimizado para análises finan
 * **Dimensão:** `d_plano_conta`
 * **Dimensão:** `d_calendario`
 
-📷 **Figura 2 – Modelo Dimensional**
+📷 ![Modelo](../images/modelo_dimensional.png)
 
 ---
 

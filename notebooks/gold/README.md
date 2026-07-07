@@ -20,9 +20,9 @@ Nesta etapa, os dados confiáveis da camada Silver são transformados em entidad
 
 ## 📓 Notebooks
 
-- [05_gold_ingest_d_plano_conta.py](./05_gold_ingest_d_plano_conta.py)  
-- [06_gold_ingest_ft_resultado.py](./06_gold_ingest_ft_resultado.py)  
-- [07_gold_ingest_d_calendario.py](./07_gold_ingest_d_calendario.py)  
+- [05_gold_d_plano_conta.py](./05_gold_d_plano_conta.py)  
+- [06_gold_ft_resultado.py](./06_gold_ft_resultado.py)  
+- [07_gold_d_calendario.py](./07_gold_d_calendario.py)  
 
 ---
 

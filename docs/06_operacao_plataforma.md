@@ -14,22 +14,22 @@ O processamento é executado de forma automatizada pelo **Azure Data Factory**, 
 Azure Data Factory
         │
         ▼
-Bronze
+     Bronze
         │
         ▼
-Silver
+     Silver
         │
         ▼
-Gold
+      Gold
         │
         ▼
-Unity Catalog
+ Unity Catalog
         │
         ▼
 Views Semânticas
         │
         ▼
-Power BI
+    Power BI
 ```
 
 Esse fluxo garante que os dados sejam processados e publicados de forma consistente para consumo analítico.

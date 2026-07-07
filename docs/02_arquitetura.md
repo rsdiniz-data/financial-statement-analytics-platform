@@ -34,10 +34,10 @@ Azure Data Factory
 Azure Databricks
         │
         ▼
- Bronze → Silver → Gold
+Bronze → Silver → Gold
         │
         ▼
-Power BI
+    Power BI
 ```
 
 📷 ![Arquitetura](../images/arquitetura.png)

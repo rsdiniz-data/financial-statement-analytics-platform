@@ -178,11 +178,11 @@ Power BI
 
 ### 🥈 Silver
 
-* `03_silver_ingest_plano_conta`
-* `04_silver_ingest_resultado`
+* `03_silver_transform_plano_conta`
+* `04_silver_transform_resultado`
 
 ### 🥇 Gold
 
-* `05_gold_ingest_d_plano_conta`
-* `06_gold_ingest_ft_resultado`
-* `07_gold_ingest_d_calendario`
+* `05_gold_d_plano_conta`
+* `06_gold_ft_resultado`
+* `07_gold_d_calendario`

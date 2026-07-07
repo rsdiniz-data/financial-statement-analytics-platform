@@ -47,3 +47,51 @@ Nesta camada são aplicadas transformações técnicas necessárias para criaç�
 - Preparação da dimensão contábil
 
 Resultado:
+
+finance.silver.plano_conta
+
+
+---
+
+### 📊 Resultado Financeiro (DRE)
+
+- Leitura dos dados financeiros da camada Bronze
+- Tratamento de períodos e referências temporais
+- Transformação de estrutura horizontal para vertical (unpivot)
+- Conversão e padronização dos valores financeiros
+- Preparação dos dados para relacionamento com Plano de Contas
+
+Resultado:
+
+finance.silver.resultado
+
+
+---
+
+## 🧱 Características da Camada Silver
+
+A camada Silver representa o nível de dados confiáveis (*Trusted Data*) da plataforma.
+
+Principais características:
+
+- Persistência em formato Delta Lake
+- Controle de qualidade dos dados
+- Estruturas padronizadas
+- Dados preparados para regras de negócio
+- Registro e governança através do Unity Catalog
+
+---
+
+## 🔗 Integração
+
+Detalhes sobre arquitetura, transformações e fluxo de dados:
+
+👉 [Desenvolvimento do Projeto](../../docs/03_desenvolvimento.md)
+
+---
+
+## 📌 Observação
+
+A camada Silver atua como ponte entre os dados brutos da Bronze e as entidades analíticas da Gold.
+
+Seu objetivo é garantir que os dados financeiros estejam tratados, padronizados e confiáveis antes da aplicação das regras de negócio e disponibilização para ferramentas de BI.

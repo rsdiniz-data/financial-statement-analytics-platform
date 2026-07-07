@@ -126,7 +126,7 @@ erDiagram
         date data
         long ano
         string mes
-        ling mes_num
+        long mes_num
     }
 
     D_PLANO_CONTA {

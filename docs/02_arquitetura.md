@@ -135,7 +135,7 @@ Azure Data Factory
 Azure Databricks
         │
         ▼
- Bronze → Silver → Gold
+Bronze → Silver → Gold
         │
         ▼
 Power BI

@@ -119,8 +119,8 @@ A camada Gold implementa um modelo dimensional baseado em Star Schema.
 ```mermaid
 erDiagram
 
-    D_CALENDARIO ||--o{ FT_RESULTADO : possui
-    D_PLANO_CONTA ||--o{ FT_RESULTADO : classifica
+    D_CALENDARIO ||--o{ FT_RESULTADO :
+    D_PLANO_CONTA ||--o{ FT_RESULTADO :
 
     D_CALENDARIO {
         date data

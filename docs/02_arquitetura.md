@@ -138,7 +138,7 @@ Azure Databricks
 Bronze → Silver → Gold
         │
         ▼
-Power BI
+    Power BI
 ```
 
 ### ⚙️ Características

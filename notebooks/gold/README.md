@@ -124,22 +124,22 @@ erDiagram
 
     D_CALENDARIO {
         date data
-        int ano
-        int mes
-        string periodo
+        long ano
+        string mes
+        ling mes_num
     }
 
     D_PLANO_CONTA {
         string id_conta
         string descricao
-        string hierarquia_dre
+        string cod_dre
+        long tipo_indicador
     }
 
     FT_RESULTADO {
         string id_conta
         date data
-        decimal valor
-        int ano
+        double valor
     }
 ```
 

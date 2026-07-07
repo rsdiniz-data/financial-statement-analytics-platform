@@ -1,15 +1,29 @@
 # 🥈 Silver (Trusted Data)
 
-Camada responsável pelo tratamento, padronização e estruturação dos dados analíticos.
+Camada responsável pelo tratamento, padronização e enriquecimento dos dados financeiros provenientes da camada Bronze.
+
+Nesta etapa, os dados brutos são transformados em estruturas confiáveis e preparadas para consumo analítico e construção das entidades corporativas da camada Gold.
 
 ---
 
 ## 🎯 Objetivo
 
-- Limpar e padronizar os dados  
-- Aplicar regras técnicas e estruturais  
-- Organizar os dados para modelagem analítica  
-- Preparar as entidades para consumo na camada Gold  
+- Garantir qualidade e consistência dos dados financeiros
+- Aplicar transformações técnicas e regras estruturais
+- Padronizar atributos para processamento analítico
+- Preparar entidades confiáveis para modelagem dimensional
+- Disponibilizar dados tratados para publicação na camada Gold
+
+---
+
+## 📥 Origem dos Dados
+
+Os dados são consumidos exclusivamente da camada Bronze:
+
+- Dados do Plano de Contas
+- Dados financeiros da Demonstração de Resultado (DFP / DRE)
+
+A leitura é realizada através de tabelas Delta Lake registradas no Unity Catalog.
 
 ---
 
@@ -22,19 +36,14 @@ Camada responsável pelo tratamento, padronização e estruturação dos dados a
 
 ## ⚙️ Processamento
 
-Nesta camada são aplicadas:
+Nesta camada são aplicadas transformações técnicas necessárias para criação das estruturas analíticas:
 
-- Limpeza e padronização dos dados  
-- Conversão de tipos de dados  
-- Estruturação hierárquica do plano de contas  
-- Transformação de dados wide → long (unpivot)  
-- Tratamento de valores financeiros  
-- Preparação para joins e modelagem dimensional  
+### 📘 Plano de Contas
 
----
+- Leitura da tabela Bronze
+- Padronização dos atributos contábeis
+- Tratamento da hierarquia de contas
+- Normalização dos campos de classificação
+- Preparação da dimensão contábil
 
-## 🔗 Integração
-
-Detalhes do pipeline e das transformações:
-
-👉 [Desenvolvimento do Projeto](../../docs/03_desenvolvimento.md)
+Resultado:

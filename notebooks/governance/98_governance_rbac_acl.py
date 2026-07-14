@@ -62,7 +62,7 @@
 
 
 # =========================================================
-# 0. CONFIGURAÇÕES DE GOVERNANÇA
+# 1. CONFIGURAÇÕES DE GOVERNANÇA
 # =========================================================
 #
 # Referência:
@@ -113,7 +113,7 @@ VW_D_CALENDARIO = (
 
 
 # =========================================================
-# 1. LOG OPERACIONAL
+# 2. LOG OPERACIONAL
 # =========================================================
 #
 # Referência:
@@ -137,7 +137,7 @@ log("Iniciando demonstração de governança")
 
 
 # =========================================================
-# 2. PRINCÍPIO DO MENOR PRIVILÉGIO
+# 3. PRINCÍPIO DO MENOR PRIVILÉGIO
 # =========================================================
 #
 # Referência:
@@ -179,7 +179,7 @@ log("Aplicando princípio do menor privilégio")
 
 
 # =========================================================
-# 3. VALIDAÇÃO DOS GRUPOS (RBAC)
+# 4. VALIDAÇÃO DOS GRUPOS (RBAC)
 # =========================================================
 #
 # Referência:
@@ -219,7 +219,7 @@ display(
 
 
 # =========================================================
-# 4. CONCESSÃO DE ACESSO AO CATÁLOGO
+# 5. CONCESSÃO DE ACESSO AO CATÁLOGO
 # =========================================================
 #
 # Referência:
@@ -259,7 +259,7 @@ TO `business_users`
 """)
 
 # =========================================================
-# 5. CONCESSÃO DE ACESSO AOS SCHEMAS
+# 6. CONCESSÃO DE ACESSO AOS SCHEMAS
 # =========================================================
 #
 # Referência:
@@ -295,7 +295,7 @@ TO `business_users`
 
 
 # =========================================================
-# 6. ACL PARA DATA ENGINEERS
+# 7. ACL PARA DATA ENGINEERS
 # =========================================================
 #
 # Referência:
@@ -347,7 +347,7 @@ TO `data_engineers`
 """)
 
 # =========================================================
-# 7. ACL PARA BI ANALYSTS
+# 8. ACL PARA BI ANALYSTS
 # =========================================================
 #
 # Referência:
@@ -399,7 +399,7 @@ TO `bi_analysts`
 
 
 # =========================================================
-# 8. ACL PARA BUSINESS USERS
+# 9. ACL PARA BUSINESS USERS
 # =========================================================
 #
 # Referência:
@@ -451,7 +451,7 @@ TO `business_users`
 """)
 
 # =========================================================
-# 9. AUDITORIA DO CATÁLOGO E DOS SCHEMAS
+# 10. AUDITORIA DO CATÁLOGO E DOS SCHEMAS
 # =========================================================
 #
 # Referência:
@@ -527,7 +527,7 @@ display(
 
 
 # =========================================================
-# 10. AUDITORIA DAS TABELAS ANALÍTICAS
+# 11. AUDITORIA DAS TABELAS ANALÍTICAS
 # =========================================================
 #
 # Referência:
@@ -586,7 +586,7 @@ display(
 )
 
 # =========================================================
-# 11. AUDITORIA DAS VIEWS SEMÂNTICAS
+# 12. AUDITORIA DAS VIEWS SEMÂNTICAS
 # =========================================================
 #
 # Referência:
@@ -646,7 +646,7 @@ display(
 )
 
 # =========================================================
-# 12. FINALIZAÇÃO
+# 13. FINALIZAÇÃO
 # =========================================================
 #
 # Referência:

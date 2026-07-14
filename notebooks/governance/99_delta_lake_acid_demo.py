@@ -203,6 +203,15 @@ display(
 
 )
 
+# =========================================================
+# 4. VALIDAÇÃO DA VERSÃO ATUAL
+# =========================================================
+#
+# Objetivo:
+# - Registrar quantidade atual de registros
+#
+# =========================================================
+
 current_count = (
     spark.table(DEMO_TABLE)
          .count()
@@ -211,7 +220,7 @@ current_count = (
 print(f"Registros atuais: {current_count}")
 
 # =========================================================
-# 4. SIMULAÇÃO DE TRANSAÇÃO ACID
+# 5. SIMULAÇÃO DE TRANSAÇÃO ACID
 # =========================================================
 #
 # Referência:
@@ -250,6 +259,15 @@ log("Executando transação ACID (OVERWRITE)")
          .saveAsTable(DEMO_TABLE)
 )
 
+# =========================================================
+# 6. VALIDAÇÃO APÓS A TRANSAÇÃO
+# =========================================================
+#
+# Objetivo:
+# - Registrar quantidade de registros após overwrite
+#
+# =========================================================
+
 updated_count = (
     spark.table(DEMO_TABLE)
          .count()
@@ -259,7 +277,7 @@ print(f"Registros após overwrite: {updated_count}")
 
 
 # =========================================================
-# 5. HISTÓRICO APÓS A TRANSAÇÃO
+# 7. HISTÓRICO APÓS A TRANSAÇÃO
 # =========================================================
 #
 # Referência:
@@ -298,7 +316,7 @@ display(
 
 
 # =========================================================
-# 6. CONSULTA HISTÓRICA (TIME TRAVEL)
+# 8. CONSULTA HISTÓRICA (TIME TRAVEL)
 # =========================================================
 #
 # Referência:
@@ -337,7 +355,7 @@ display(
 
 
 # =========================================================
-# 7. RESTORE TABLE
+# 9. RESTORE TABLE
 # =========================================================
 #
 # Referência:
@@ -373,109 +391,22 @@ RESTORE TABLE {DEMO_TABLE}
 TO VERSION AS OF 0
 """)
 
-restored_count = (
-    spark.table(DEMO_TABLE)
-         .count()
-)
-
-print(f"Registros após restore: {restored_count}")
-
-# =========================================================
-# 8. TIME TRAVEL (VERSION AS OF)
-# =========================================================
-#
-# Referência:
-# - docs/07_governanca.md
-#   → Garantias transacionais do Delta Lake
-#
-# - docs/06_operacao_plataforma.md
-#   → Auditoria e recuperação de dados
-#
-# - docs/15_artigo_tecnico.md
-#   → 3.7.9.5 Consulta histórica (Time Travel)
-#
-# Objetivo técnico:
-# - Consultar versões anteriores da tabela Delta
-# - Demonstrar o recurso Time Travel
-#
-# Objetivo de negócio:
-# - Permitir reprodução de cenários históricos
-# - Apoiar auditorias e investigações
-# - Recuperar snapshots sem duplicação de dados
-#
-# =========================================================
-
-log("Consultando versão histórica da tabela")
-
-display(
-
-    spark.sql(f"""
-    SELECT *
-    FROM {DEMO_TABLE}
-    VERSION AS OF 0
-    """)
-
-)
-
-# =========================================================
-# 9. RESTORE TABLE
-# =========================================================
-#
-# Referência:
-# - docs/07_governanca.md
-#   → Garantias transacionais do Delta Lake
-#
-# - docs/15_artigo_tecnico.md
-#   → 3.7.9.6 Restauração de versões (Restore Table)
-#
-# Objetivo técnico:
-# - Restaurar uma versão anterior da tabela
-# - Demonstrar rollback nativo do Delta Lake
-#
-# Objetivo de negócio:
-# - Recuperar rapidamente alterações incorretas
-# - Reduzir riscos operacionais
-# - Preservar continuidade da plataforma analítica
-#
-# =========================================================
-
-log("Restaurando versão anterior da tabela")
-
-spark.sql(f"""
-RESTORE TABLE {DEMO_TABLE}
-TO VERSION AS OF 0
-""")
-
 # =========================================================
 # 10. VALIDAÇÃO DO RESTORE
 # =========================================================
 #
-# Referência:
-# - docs/06_operacao_plataforma.md
-#   → Validação operacional
-#
-# - docs/15_artigo_tecnico.md
-#   → 3.7.9.6 Restauração de versões (Restore Table)
-#
-# Objetivo técnico:
+# Objetivo:
 # - Confirmar recuperação da versão original
-#
-# Objetivo de negócio:
-# - Validar a integridade dos dados restaurados
-# - Evidenciar a confiabilidade do mecanismo de recuperação
 #
 # =========================================================
 
-log("Validando restauração da tabela")
-
 restored_count = (
-
     spark.table(DEMO_TABLE)
          .count()
-
 )
 
 print(f"Registros após restore: {restored_count}")
+
 
 # =========================================================
 # 11. HISTÓRICO FINAL DAS TRANSAÇÕES
@@ -548,7 +479,7 @@ print(" DELTA LAKE - VALIDAÇÃO FINAL")
 print("=" * 60)
 
 print("✓ DESCRIBE HISTORY")
-print("✓ Versionamento Automático")
+print("✓ Versionamento Automático (Version AS OF)")
 print("✓ Time Travel")
 print("✓ Restore Table")
 print("✓ ACID Transactions")

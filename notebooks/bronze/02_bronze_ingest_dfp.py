@@ -172,7 +172,7 @@ def log(message):
 log("Iniciando ingestão Bronze - DFP")
 
 # =========================================================
-# 5. PADRONIZAÇÃO DE COLUNAS
+# 5. FUNÇÃO PARA PADRONIZAÇÃO DE COLUNAS
 # =========================================================
 #
 # Referência:

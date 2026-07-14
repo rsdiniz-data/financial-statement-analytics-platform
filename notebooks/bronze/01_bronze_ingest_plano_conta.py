@@ -131,7 +131,7 @@ def log(message):
 log("Iniciando ingestão Bronze - Plano de Contas")
 
 # =========================================================
-# 5. PADRONIZAÇÃO DE COLUNAS
+# 5. FUNÇÃO PARA PADRONIZAÇÃO DE COLUNAS
 # =========================================================
 #
 # Referência:

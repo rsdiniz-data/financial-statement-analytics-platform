@@ -49,7 +49,6 @@
 # =========================================================
 
 %pip install openpyxl pandas requests
-
 dbutils.library.restartPython()
 
 

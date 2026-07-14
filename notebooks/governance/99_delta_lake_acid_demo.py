@@ -59,7 +59,7 @@
 
 
 # =========================================================
-# 0. CONFIGURAÇÃO DO AMBIENTE
+# 1. CONFIGURAÇÃO DO AMBIENTE
 # =========================================================
 #
 # Referência:
@@ -97,7 +97,7 @@ DEMO_TABLE = (
 
 
 # =========================================================
-# 1. LOG OPERACIONAL
+# 2. LOG OPERACIONAL
 # =========================================================
 #
 # Referência:
@@ -121,7 +121,7 @@ log("Iniciando demonstração dos recursos ACID do Delta Lake")
 
 
 # =========================================================
-# 2. PREPARAÇÃO DO AMBIENTE DE DEMONSTRAÇÃO
+# 3. PREPARAÇÃO DO AMBIENTE DE DEMONSTRAÇÃO
 # =========================================================
 #
 # Referência:
@@ -165,7 +165,7 @@ log("Tabela de demonstração criada com sucesso")
 
 
 # =========================================================
-# 3. HISTÓRICO DE TRANSAÇÕES (DESCRIBE HISTORY)
+# 4. HISTÓRICO DE TRANSAÇÕES (DESCRIBE HISTORY)
 # =========================================================
 #
 # Referência:
@@ -204,7 +204,7 @@ display(
 )
 
 # =========================================================
-# 4. VALIDAÇÃO DA VERSÃO ATUAL
+# 5. VALIDAÇÃO DA VERSÃO ATUAL
 # =========================================================
 #
 # Objetivo:
@@ -220,7 +220,7 @@ current_count = (
 print(f"Registros atuais: {current_count}")
 
 # =========================================================
-# 5. SIMULAÇÃO DE TRANSAÇÃO ACID
+# 6. SIMULAÇÃO DE TRANSAÇÃO ACID
 # =========================================================
 #
 # Referência:
@@ -260,7 +260,7 @@ log("Executando transação ACID (OVERWRITE)")
 )
 
 # =========================================================
-# 6. VALIDAÇÃO APÓS A TRANSAÇÃO
+# 7. VALIDAÇÃO APÓS A TRANSAÇÃO
 # =========================================================
 #
 # Objetivo:
@@ -277,7 +277,7 @@ print(f"Registros após overwrite: {updated_count}")
 
 
 # =========================================================
-# 7. HISTÓRICO APÓS A TRANSAÇÃO
+# 8. HISTÓRICO APÓS A TRANSAÇÃO
 # =========================================================
 #
 # Referência:
@@ -316,7 +316,7 @@ display(
 
 
 # =========================================================
-# 8. CONSULTA HISTÓRICA (TIME TRAVEL)
+# 9. CONSULTA HISTÓRICA (TIME TRAVEL)
 # =========================================================
 #
 # Referência:
@@ -355,7 +355,7 @@ display(
 
 
 # =========================================================
-# 9. RESTORE TABLE
+# 10. RESTORE TABLE
 # =========================================================
 #
 # Referência:
@@ -392,7 +392,7 @@ TO VERSION AS OF 0
 """)
 
 # =========================================================
-# 10. VALIDAÇÃO DO RESTORE
+# 11. VALIDAÇÃO DO RESTORE
 # =========================================================
 #
 # Objetivo:
@@ -409,7 +409,7 @@ print(f"Registros após restore: {restored_count}")
 
 
 # =========================================================
-# 11. HISTÓRICO FINAL DAS TRANSAÇÕES
+# 12. HISTÓRICO FINAL DAS TRANSAÇÕES
 # =========================================================
 #
 # Referência:
@@ -443,7 +443,7 @@ display(
 )
 
 # =========================================================
-# 12. EVIDÊNCIAS DAS FUNCIONALIDADES DO DELTA LAKE
+# 13. EVIDÊNCIAS DAS FUNCIONALIDADES DO DELTA LAKE
 # =========================================================
 #
 # Referência:
@@ -494,7 +494,7 @@ print("-" * 60)
 
 
 # =========================================================
-# 13. LIMPEZA DO AMBIENTE
+# 14. LIMPEZA DO AMBIENTE
 # =========================================================
 #
 # Referência:
@@ -522,7 +522,7 @@ DROP TABLE IF EXISTS {DEMO_TABLE}
 
 
 # =========================================================
-# 14. FINALIZAÇÃO
+# 15. FINALIZAÇÃO
 # =========================================================
 #
 # Referência:

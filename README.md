@@ -369,6 +369,14 @@ A utilização do GitHub Actions demonstra a adoção de práticas modernas de E
 
 ---
 
+## 🚀 CI/CD Pipeline
+
+O projeto utiliza GitHub Actions para validação automática da documentação, notebooks e estrutura do repositório.
+
+![GitHub Actions](./images/github-actions-workflow.png)
+
+---
+
 # 📈 Práticas de DataOps
 
 A plataforma incorpora conceitos de **DataOps**, promovendo maior qualidade, rastreabilidade e automação no ciclo de vida dos dados.

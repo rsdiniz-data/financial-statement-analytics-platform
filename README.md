@@ -16,9 +16,9 @@
 # Índice
 
 - Sobre o Projeto
-- Objetivo do Projeto
+- Objetivo
 - Principais Funcionalidades
-- Arquitetura da Solução
+- Arquitetura
 - Navegação
 - Documentação Técnica
 - Stack Tecnológica

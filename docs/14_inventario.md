@@ -138,8 +138,8 @@ Este inventário garante:
 
 ---
 
-## 📷 Inventário Completo
+## 🔗 Inventário Completo
 
-![Inventário 1]([../images/modelo_dimensional.png](https://raw.githubusercontent.com/rsdiniz-data/financial-statement-analytics-platform/refs/heads/main/images/inventario_recursos_1.png?token=GHSAT0AAAAAAD7WOZM3UISVBGTEMEVIQDOE2SXYW4Q)
-
-
+👉 [Parte 1](https://raw.githubusercontent.com/rsdiniz-data/financial-statement-analytics-platform/refs/heads/main/images/inventario_recursos_1.png?token=GHSAT0AAAAAAD7WOZM3UISVBGTEMEVIQDOE2SXYW4Q)
+👉 [Parte 2](https://raw.githubusercontent.com/rsdiniz-data/financial-statement-analytics-platform/refs/heads/main/images/inventario_recursos_2.png?token=GHSAT0AAAAAAD7WOZM2SJDKWCQGBDH5BPZE2SXY47Q)
+👉 [Parte 3](https://raw.githubusercontent.com/rsdiniz-data/financial-statement-analytics-platform/refs/heads/main/images/inventario_recursos_3.png?token=GHSAT0AAAAAAD7WOZM2L3WL2FZHF7GQOENG2SXY53Q)

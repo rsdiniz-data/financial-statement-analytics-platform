@@ -495,40 +495,6 @@ Essa organização segue boas práticas de Engenharia de Dados e Engenharia de S
 
 ---
 
-# 🎯 Objetivos Demonstrados pelo Projeto
-
-Além da implementação técnica da plataforma, este repositório demonstra competências frequentemente exigidas em projetos corporativos de Engenharia de Dados.
-
-Entre os principais conhecimentos evidenciados estão:
-
-- Arquitetura Lakehouse
-- Arquitetura Medallion
-- Engenharia de Dados em Microsoft Azure
-- Azure Databricks
-- Apache Spark (PySpark)
-- Azure Data Lake Storage Gen2
-- Delta Lake
-- Unity Catalog
-- Azure Data Factory
-- Azure Key Vault
-- Microsoft Entra ID
-- Modelagem Dimensional
-- Governança de Dados
-- Segurança (RBAC e Secret Scopes)
-- Data Lineage
-- Git e GitHub
-- GitHub Actions
-- Continuous Integration (CI)
-- Continuous Delivery (CD)
-- DevOps
-- DataOps
-- Automação de Pipelines
-- Versionamento de Dados
-- Documentação Técnica
-- Boas práticas de Engenharia de Dados
-
----
-
 # 📄 Licença
 
 Este projeto foi desenvolvido exclusivamente para fins de estudo, demonstração técnica e composição de portfólio profissional.
@@ -543,7 +509,7 @@ O conteúdo pode ser utilizado como referência para aprendizagem, desde que res
 
 Engenheiro de Dados | Analytics Engineer | Data Analytics
 
-Especialista em soluções de Engenharia de Dados, Analytics Engineering e Business Intelligence, com foco na construção de plataformas modernas de dados utilizando Microsoft Azure, Azure Databricks, Apache Spark, Delta Lake e Power BI.
+Atuação em soluções de Engenharia de Dados, Analytics Engineering e Business Intelligence, com foco na construção de plataformas modernas de dados utilizando Microsoft Azure, Azure Databricks, Apache Spark, Delta Lake e Power BI.
 
 ---
 

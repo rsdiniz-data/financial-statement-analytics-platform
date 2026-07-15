@@ -134,4 +134,16 @@ Este inventário garante:
 - Rastreabilidade dos recursos  
 - Facilidade de manutenção e troubleshooting  
 - Apoio à evolução da arquitetura  
-- Visão centralizada do ecossistema de dados  
+- Visão centralizada do ecossistema de dados
+
+
+
+
+| Ordem | Categoria | Recurso | Prefixo | Exemplo | Plataforma | Objetivo | Observações | Seção do Documento | Referência | 
+|----------|----------|----------|-------------|-------------|
+| 1 | Infraestrutura | Resource Group | grp | grp-finance-dev | Azure Portal | Agrupar recursos do projeto | Ambiente de desenvolvimento | 8. Runbook de Implantação | 8.2 Provisionamento da infraestrutura | 
+"| 2 | Infraestrutura | Storage Account | st | stfinancedl002 | Azure Portal | Armazenamento do Data Lake | ADLS Gen2 | 3. Desenvolvimento do Projeto
+8. Runbook de Implantação | 3.1 Estruturação da Plataforma
+8.2 Provisionamento da infraestrutura | "
+
+

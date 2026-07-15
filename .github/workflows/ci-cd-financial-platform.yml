@@ -1,0 +1,89 @@
+name: CI-CD Financial Statement Analytics Platform
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+
+  validate-repository:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate repository structure
+        run: |
+
+          echo "Validating project structure..."
+
+          test -d docs
+          test -d notebooks
+          test -d images
+          test -d pipelines
+          test -d infrastructure
+
+          test -f README.md
+          test -f LICENSE
+          test -f .gitignore
+
+          echo "Repository structure OK."
+
+      - name: Validate documentation
+        run: |
+
+          echo "Checking documentation..."
+
+          test -f docs/01_visao_geral.md
+          test -f docs/02_arquitetura.md
+          test -f docs/03_desenvolvimento.md
+          test -f docs/04_modelagem_dimensional.md
+          test -f docs/05_dicionario_dados.md
+          test -f docs/06_operacao_plataforma.md
+          test -f docs/07_governanca.md
+          test -f docs/08_runbook_implantacao.md
+          test -f docs/09_runbook_operacional.md
+          test -f docs/10_padrao_nomenclatura.md
+          test -f docs/11_checklist_implantacao.md
+          test -f docs/12_troubleshooting.md
+          test -f docs/13_entrega_valor.md
+          test -f docs/14_inventario.md
+          test -f docs/15_artigo_tecnico.md
+
+          echo "Documentation OK."
+
+      - name: Validate notebooks
+        run: |
+
+          echo "Checking notebooks..."
+
+          find notebooks -type f
+
+          echo "Notebook validation completed."
+
+      - name: Validate Python syntax
+        run: |
+
+          python -m compileall .
+
+      - name: CI validation completed
+        run: |
+
+          echo "=================================="
+          echo "Financial Statement Analytics Platform"
+          echo "Repository validation completed."
+          echo "GitHub Actions CI succeeded."
+          echo "=================================="

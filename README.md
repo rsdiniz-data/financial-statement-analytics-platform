@@ -363,3 +363,164 @@ Entre as práticas adotadas destacam-se:
 Essas práticas aproximam a solução dos padrões utilizados em plataformas corporativas modernas de Engenharia de Dados.
 
 ---
+
+---
+
+# 📚 Documentação
+
+A documentação foi organizada de forma modular para facilitar a navegação, manutenção e evolução da plataforma.
+
+Cada documento aborda uma área específica da solução, permitindo compreender desde os aspectos arquiteturais até os procedimentos operacionais e as práticas de governança adotadas durante o desenvolvimento.
+
+Os principais temas abordados incluem:
+
+- Arquitetura Lakehouse
+- Arquitetura Medallion (Bronze, Silver e Gold)
+- Engenharia de Dados em Microsoft Azure
+- Azure Databricks
+- Apache Spark (PySpark)
+- Azure Data Lake Storage Gen2
+- Delta Lake
+- Unity Catalog
+- Azure Data Factory
+- Azure Key Vault
+- Microsoft Entra ID
+- Governança de Dados
+- Segurança (RBAC, ACL e Secret Scopes)
+- Modelagem Dimensional
+- Data Lineage
+- Versionamento de Dados (Time Travel e ACID Transactions)
+- Git e GitHub
+- GitHub Actions
+- DevOps e DataOps
+- Automação de Pipelines
+- Boas práticas de Engenharia de Dados
+- Runbooks operacionais
+- Troubleshooting
+- Documentação técnica completa da plataforma
+
+Toda a documentação foi desenvolvida seguindo uma estrutura semelhante à utilizada em projetos corporativos de Engenharia de Dados, proporcionando uma visão abrangente sobre arquitetura, implementação, governança, operação e evolução da solução.
+
+---
+
+# 📁 Estrutura do Repositório
+
+O repositório foi organizado de forma modular, separando claramente os componentes da plataforma de dados, facilitando a manutenção, reutilização de artefatos e evolução do projeto.
+
+```text
+financial-statement-analytics-platform/
+│
+├── .github/
+│   └── workflows/
+│       └── ci-cd-financial-platform.yml
+│
+├── data/
+│   ├── raw/
+│   └── sample/
+│
+├── docs/
+│   ├── 01_visao_geral.md
+│   ├── 02_arquitetura.md
+│   ├── 03_desenvolvimento.md
+│   ├── 04_modelagem_dimensional.md
+│   ├── 05_dicionario_dados.md
+│   ├── 06_operacao_plataforma.md
+│   ├── 07_governanca.md
+│   ├── 08_runbook_implantacao.md
+│   ├── 09_runbook_operacional.md
+│   ├── 10_padrao_nomenclatura.md
+│   ├── 11_checklist_implantacao.md
+│   ├── 12_troubleshooting.md
+│   ├── 13_entrega_valor.md
+│   ├── 14_inventario.md
+│   └── 15_artigo_tecnico.md
+│
+├── images/
+│
+├── infrastructure/
+│
+├── notebooks/
+│   ├── bronze/
+│   ├── silver/
+│   ├── gold/
+│   └── shared/
+│
+├── pipelines/
+│
+├── scripts/
+│
+├── .gitignore
+├── LICENSE
+└── README.md
+```
+
+### Organização dos Diretórios
+
+| Diretório | Finalidade |
+|-----------|------------|
+| **.github/workflows** | Workflows do GitHub Actions responsáveis pela automação de validações e integração contínua (CI/CD). |
+| **data/** | Arquivos utilizados para demonstração da solução, incluindo dados de exemplo e arquivos auxiliares. |
+| **docs/** | Documentação técnica completa da plataforma, organizada em módulos independentes. |
+| **images/** | Diagramas, arquiteturas, capturas de tela e demais recursos visuais utilizados na documentação. |
+| **infrastructure/** | Artefatos relacionados ao provisionamento e configuração da infraestrutura Azure. |
+| **notebooks/** | Notebooks Databricks responsáveis pela implementação das camadas Bronze, Silver, Gold e componentes compartilhados. |
+| **pipelines/** | Definições e artefatos relacionados aos pipelines de orquestração da plataforma. |
+| **scripts/** | Scripts auxiliares utilizados durante implantação, configuração e manutenção da solução. |
+
+Essa organização segue boas práticas de Engenharia de Dados e Engenharia de Software, promovendo separação de responsabilidades, facilidade de manutenção e escalabilidade para futuras evoluções da plataforma.
+
+---
+
+# 🎯 Objetivos Demonstrados pelo Projeto
+
+Além da implementação técnica da plataforma, este repositório demonstra competências frequentemente exigidas em projetos corporativos de Engenharia de Dados.
+
+Entre os principais conhecimentos evidenciados estão:
+
+- Arquitetura Lakehouse
+- Arquitetura Medallion
+- Engenharia de Dados em Microsoft Azure
+- Azure Databricks
+- Apache Spark (PySpark)
+- Azure Data Lake Storage Gen2
+- Delta Lake
+- Unity Catalog
+- Azure Data Factory
+- Azure Key Vault
+- Microsoft Entra ID
+- Modelagem Dimensional
+- Governança de Dados
+- Segurança (RBAC e Secret Scopes)
+- Data Lineage
+- Git e GitHub
+- GitHub Actions
+- Continuous Integration (CI)
+- Continuous Delivery (CD)
+- DevOps
+- DataOps
+- Automação de Pipelines
+- Versionamento de Dados
+- Documentação Técnica
+- Boas práticas de Engenharia de Dados
+
+---
+
+# 📄 Licença
+
+Este projeto foi desenvolvido exclusivamente para fins de estudo, demonstração técnica e composição de portfólio profissional.
+
+O conteúdo pode ser utilizado como referência para aprendizagem, desde que respeitados os devidos créditos ao autor.
+
+---
+
+# 👨‍💻 Autor
+
+**Ricardo Silva Diniz**
+
+Engenheiro de Dados | Analytics Engineer | Data Analytics
+
+Especialista em soluções de Engenharia de Dados, Analytics Engineering e Business Intelligence, com foco na construção de plataformas modernas de dados utilizando Microsoft Azure, Azure Databricks, Apache Spark, Delta Lake e Power BI.
+
+---
+
+Se este projeto foi útil para você, considere deixar uma ⭐ no repositório.

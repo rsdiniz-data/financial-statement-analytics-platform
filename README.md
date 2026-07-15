@@ -4,6 +4,15 @@
 
 ---
 
+![Azure](https://img.shields.io/badge/Microsoft%20Azure-Cloud-0078D4?logo=microsoftazure)
+![Databricks](https://img.shields.io/badge/Azure-Databricks-EA3E23?logo=databricks)
+![PySpark](https://img.shields.io/badge/PySpark-Apache%20Spark-E25A1C?logo=apachespark)
+![Delta Lake](https://img.shields.io/badge/Delta-Lake-00ADD8)
+![Unity Catalog](https://img.shields.io/badge/Unity-Catalog-orange)
+![ADF](https://img.shields.io/badge/Azure-Data%20Factory-blue)
+![GitHub Actions](https://img.shields.io/badge/GitHub-Actions-2088FF?logo=githubactions)
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python)
+
 # 🧠 Sobre o Projeto
 
 O **Financial Statement Analytics Platform** demonstra a implementação de uma plataforma moderna de Engenharia de Dados construída sobre o ecossistema **Microsoft Azure**, utilizando uma arquitetura **Lakehouse** baseada no padrão **Medallion Architecture**.

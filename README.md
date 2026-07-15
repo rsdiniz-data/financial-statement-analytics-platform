@@ -441,10 +441,6 @@ financial-statement-analytics-platform/
 │   └── workflows/
 │       └── ci-cd-financial-platform.yml
 │
-├── data/
-│   ├── raw/
-│   └── sample/
-│
 ├── docs/
 │   ├── 01_visao_geral.md
 │   ├── 02_arquitetura.md
@@ -460,21 +456,16 @@ financial-statement-analytics-platform/
 │   ├── 12_troubleshooting.md
 │   ├── 13_entrega_valor.md
 │   ├── 14_inventario.md
-│   └── 15_artigo_tecnico.md
+│   ├── 15_artigo_tecnico.md
+│   └── README.md
 │
 ├── images/
-│
-├── infrastructure/
 │
 ├── notebooks/
 │   ├── bronze/
 │   ├── silver/
 │   ├── gold/
-│   └── shared/
-│
-├── pipelines/
-│
-├── scripts/
+│   └── governance/
 │
 ├── .gitignore
 ├── LICENSE

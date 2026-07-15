@@ -135,3 +135,9 @@ Este inventário garante:
 - Facilidade de manutenção e troubleshooting  
 - Apoio à evolução da arquitetura  
 - Visão centralizada do ecossistema de dados
+
+---
+
+## 🎯 Resultado
+https://raw.githubusercontent.com/rsdiniz-data/financial-statement-analytics-platform/refs/heads/main/images/inventario_recursos_1.png?token=GHSAT0AAAAAAD7WOZM3UISVBGTEMEVIQDOE2SXYW4Q
+

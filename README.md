@@ -224,3 +224,142 @@ Este material estabelece a rastreabilidade entre os requisitos do projeto, as de
 📄 **[Acessar documentação técnica completa](./docs/15_artigo_tecnico.md)**
 
 ---
+
+---
+
+# 🛠️ Stack Tecnológica
+
+A plataforma foi desenvolvida utilizando serviços gerenciados do ecossistema Microsoft Azure e tecnologias amplamente adotadas em projetos corporativos de Engenharia de Dados.
+
+| Categoria | Tecnologia |
+|------------|------------|
+| Cloud Platform | Microsoft Azure |
+| Armazenamento | Azure Data Lake Storage Gen2 |
+| Processamento Distribuído | Azure Databricks |
+| Engine de Processamento | Apache Spark (PySpark) |
+| Formato Transacional | Delta Lake |
+| Governança de Dados | Unity Catalog |
+| Orquestração | Azure Data Factory |
+| Gerenciamento de Credenciais | Azure Key Vault |
+| Identidade | Microsoft Entra ID |
+| Versionamento | Git |
+| Repositório | GitHub |
+| Integração Contínua | GitHub Actions |
+| Linguagens | Python e SQL |
+| Consumo Analítico | Power BI |
+
+---
+
+# 🌿 Versionamento com Git
+
+Todo o desenvolvimento da plataforma é controlado por meio do **Git**, permitindo rastreabilidade completa das alterações realizadas durante a evolução do projeto.
+
+O versionamento garante maior segurança no desenvolvimento, facilita a colaboração entre equipes e fornece histórico detalhado de todas as modificações implementadas na solução.
+
+O repositório utiliza o **GitHub** como plataforma central para armazenamento, gerenciamento e distribuição do código-fonte.
+
+### Principais práticas adotadas
+
+- Controle completo de versões do código-fonte;
+- Histórico de alterações por meio de commits;
+- Organização do projeto em estrutura modular;
+- Rastreabilidade das evoluções da plataforma;
+- Suporte à colaboração entre desenvolvedores;
+- Integração com pipelines automatizados de CI/CD.
+
+---
+
+# 🚀 DevOps e DataOps
+
+Além da implementação da plataforma de dados, o projeto adota práticas de **DevOps** e **DataOps**, aproximando o ciclo de desenvolvimento de software das necessidades operacionais de Engenharia de Dados.
+
+Essas práticas aumentam a confiabilidade da solução, reduzem erros operacionais e facilitam a evolução contínua da plataforma.
+
+As principais iniciativas implementadas incluem:
+
+- Versionamento completo do código com Git;
+- Repositório centralizado no GitHub;
+- Organização modular dos notebooks e documentação;
+- Automação da validação do repositório;
+- Governança centralizada dos ativos de dados;
+- Automação dos pipelines de processamento;
+- Rastreabilidade completa das transformações;
+- Padronização dos processos de implantação;
+- Separação entre ambientes de desenvolvimento e execução.
+
+---
+
+# ⚙️ Continuous Integration (CI)
+
+O projeto utiliza **GitHub Actions** para automatizar tarefas de validação sempre que alterações são enviadas ao repositório.
+
+A pipeline de Integração Contínua executa verificações automáticas que ajudam a preservar a consistência da estrutura do projeto.
+
+Entre as validações implementadas destacam-se:
+
+- Execução automática a cada *push* para a branch principal;
+- Validação da estrutura do repositório;
+- Verificação da organização dos diretórios;
+- Validação dos principais arquivos do projeto;
+- Base preparada para expansão com testes automatizados e validações adicionais.
+
+Essa abordagem reduz falhas de configuração e aumenta a confiabilidade das entregas.
+
+---
+
+# 📦 Continuous Delivery (CD)
+
+A arquitetura também foi projetada considerando práticas de **Continuous Delivery**, permitindo automatizar a disponibilização dos pipelines de dados.
+
+Embora este projeto tenha caráter demonstrativo, sua estrutura reproduz o fluxo normalmente utilizado em ambientes corporativos.
+
+A estratégia contempla:
+
+- Publicação automatizada dos artefatos versionados;
+- Integração com Azure Data Factory;
+- Orquestração dos notebooks do Azure Databricks;
+- Execução automatizada dos pipelines de processamento;
+- Atualização controlada das tabelas Delta Lake;
+- Disponibilização das tabelas governadas no Unity Catalog.
+
+Essa organização facilita futuras evoluções para cenários completos de implantação contínua (Continuous Deployment).
+
+---
+
+# 🔄 GitHub Actions
+
+A automação do repositório é realizada através do **GitHub Actions**, responsável por executar os workflows definidos para validação e integração contínua.
+
+A estrutura da solução contempla a pasta padrão utilizada pelo GitHub para execução dos workflows:
+
+```text
+.github/
+└── workflows/
+    └── ci-cd-financial-platform.yml
+```
+
+A utilização do GitHub Actions demonstra a adoção de práticas modernas de Engenharia de Software aplicadas ao contexto de Engenharia de Dados.
+
+---
+
+# 📈 Práticas de DataOps
+
+A plataforma incorpora conceitos de **DataOps**, promovendo maior qualidade, rastreabilidade e automação no ciclo de vida dos dados.
+
+Entre as práticas adotadas destacam-se:
+
+- Versionamento do código-fonte;
+- Versionamento dos notebooks Databricks;
+- Versionamento da documentação técnica;
+- Governança centralizada via Unity Catalog;
+- Controle seguro de credenciais utilizando Azure Key Vault;
+- Processamento automatizado dos pipelines;
+- Monitoramento operacional pelo Azure Data Factory;
+- Auditoria através de metadados de governança;
+- Data Lineage;
+- Separação entre camadas Bronze, Silver e Gold;
+- Utilização de Delta Lake para garantir transações ACID, versionamento e Time Travel.
+
+Essas práticas aproximam a solução dos padrões utilizados em plataformas corporativas modernas de Engenharia de Dados.
+
+---

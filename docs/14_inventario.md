@@ -139,6 +139,6 @@ Este inventário garante:
 
 
 
-| Ordem | Categoria | Recurso | Prefixo | Exemplo | Plataforma | Objetivo | Observações | Seção do Documento | Referência | 
+| Ordem | Categoria | Recurso | Prefixo | Exemplo | Plataforma | Objetivo | Observações | Seção do Documento | Referência |
 | 1 | Infraestrutura | Resource Group | grp | grp-finance-dev | Azure Portal | Agrupar recursos do projeto | Ambiente de desenvolvimento | 8. Runbook de Implantação | 8.2 Provisionamento da infraestrutura |
 

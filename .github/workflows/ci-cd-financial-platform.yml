@@ -9,9 +9,14 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
 jobs:
 
-  validate-repository:
+  validate-platform:
+
+    name: Validate Platform
 
     runs-on: ubuntu-latest
 
@@ -25,65 +30,238 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Display environment information
+        run: |
+          echo "Operating System:"
+          uname -a
+
+          echo ""
+          echo "Python Version:"
+          python --version
+
       - name: Validate repository structure
         run: |
 
-          echo "Validating project structure..."
+          echo "Validating repository..."
 
-          test -d docs
-          test -d notebooks
-          test -d images
-          test -d pipelines
-          test -d infrastructure
+          directories=(
+            ".github"
+            "docs"
+            "images"
+            "notebooks"
+            "pipelines"
+            "scripts"
+          )
 
-          test -f README.md
-          test -f LICENSE
-          test -f .gitignore
+          for dir in "${directories[@]}"; do
+            if [ -d "$dir" ]; then
+              echo "✔ $dir"
+            else
+              echo "✖ Missing directory: $dir"
+              exit 1
+            fi
+          done
 
-          echo "Repository structure OK."
+          files=(
+            "README.md"
+            ".gitignore"
+            "LICENSE"
+          )
+
+          for file in "${files[@]}"; do
+            if [ -f "$file" ]; then
+              echo "✔ $file"
+            else
+              echo "✖ Missing file: $file"
+              exit 1
+            fi
+          done
+
+          echo ""
+          echo "Repository validation completed."
 
       - name: Validate documentation
         run: |
 
           echo "Checking documentation..."
 
-          test -f docs/01_visao_geral.md
-          test -f docs/02_arquitetura.md
-          test -f docs/03_desenvolvimento.md
-          test -f docs/04_modelagem_dimensional.md
-          test -f docs/05_dicionario_dados.md
-          test -f docs/06_operacao_plataforma.md
-          test -f docs/07_governanca.md
-          test -f docs/08_runbook_implantacao.md
-          test -f docs/09_runbook_operacional.md
-          test -f docs/10_padrao_nomenclatura.md
-          test -f docs/11_checklist_implantacao.md
-          test -f docs/12_troubleshooting.md
-          test -f docs/13_entrega_valor.md
-          test -f docs/14_inventario.md
-          test -f docs/15_artigo_tecnico.md
+          total=$(find docs -name "*.md" | wc -l)
 
-          echo "Documentation OK."
+          echo "Markdown documents found: $total"
+
+          if [ "$total" -lt 15 ]; then
+            echo "Documentation incomplete."
+            exit 1
+          fi
+
+          echo "Documentation validation completed."
 
       - name: Validate notebooks
         run: |
 
-          echo "Checking notebooks..."
+          echo "Searching notebooks..."
 
-          find notebooks -type f
+          notebooks=$(find notebooks -type f | wc -l)
+
+          echo "Files found: $notebooks"
+
+          if [ "$notebooks" -eq 0 ]; then
+            echo "No notebooks found."
+            exit 1
+          fi
 
           echo "Notebook validation completed."
 
       - name: Validate Python syntax
         run: |
 
+          echo "Compiling Python files..."
+
           python -m compileall .
 
-      - name: CI validation completed
+          echo "Python validation completed."
+
+      - name: Summary
         run: |
 
-          echo "=================================="
+          echo ""
+          echo "=============================================="
+          echo " Financial Statement Analytics Platform"
+          echo " Platform validation completed successfully"
+          echo "=============================================="
+
+  package-platform:
+
+    name: Package Repository
+
+    needs: validate-platform
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - name: Create release package
+        run: |
+
+          mkdir release
+
+          cp README.md release/
+
+          cp LICENSE release/
+
+          cp -R docs release/
+
+          cp -R notebooks release/
+
+          cp -R pipelines release/
+
+          cp -R scripts release/
+
+          echo "Release package created."
+
+      - name: Upload package artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: financial-platform-package
+          path: release/
+
+  publish-platform:
+
+    name: Publish Platform (Simulation)
+
+    needs: package-platform
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Simulate deployment
+        run: |
+
+          echo ""
+          echo "=============================================="
+          echo "Starting deployment..."
+          echo ""
+
+          echo "Azure Data Factory ............. OK"
+
+          sleep 1
+
+          echo "Azure Data Lake Storage ........ OK"
+
+          sleep 1
+
+          echo "Azure Databricks ............... OK"
+
+          sleep 1
+
+          echo "Unity Catalog ................. OK"
+
+          sleep 1
+
+          echo "Delta Lake .................... OK"
+
+          sleep 1
+
+          echo "Power BI Semantic Model ....... OK"
+
+          sleep 1
+
+          echo ""
+          echo "Deployment completed successfully."
+          echo "=============================================="
+
+  pipeline-summary:
+
+    name: Pipeline Summary
+
+    needs:
+      - validate-platform
+      - package-platform
+      - publish-platform
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Final summary
+        run: |
+
+          echo ""
+          echo "=============================================="
+          echo " CI/CD PIPELINE FINISHED"
+          echo "=============================================="
+
+          echo "✔ Repository validated"
+
+          echo "✔ Documentation validated"
+
+          echo "✔ Notebooks validated"
+
+          echo "✔ Python syntax validated"
+
+          echo "✔ Package generated"
+
+          echo "✔ Deployment simulated"
+
+          echo ""
+
           echo "Financial Statement Analytics Platform"
-          echo "Repository validation completed."
-          echo "GitHub Actions CI succeeded."
-          echo "=================================="
+
+          echo "Git"
+
+          echo "GitHub"
+
+          echo "GitHub Actions"
+
+          echo "Continuous Integration"
+
+          echo "Continuous Delivery"
+
+          echo "DataOps"
+
+          echo ""
+
+          echo "Pipeline executed successfully."

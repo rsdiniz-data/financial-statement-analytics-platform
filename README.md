@@ -16,18 +16,21 @@
 # Índice
 
 - Sobre o Projeto
-- Objetivo
+- Objetivo do Projeto
 - Principais Funcionalidades
-- Arquitetura
+- Arquitetura da Solução
 - Navegação
 - Documentação Técnica
 - Stack Tecnológica
 - Versionamento
 - DevOps e DataOps
 - CI/CD
+- GitHub Actions
+- Práticas de DataOps
+- Documentação
 - Estrutura do Repositório
 - Licença
-- 
+  
 # 🧠 Sobre o Projeto
 
 O **Financial Statement Analytics Platform** demonstra a implementação de uma plataforma moderna de Engenharia de Dados construída sobre o ecossistema **Microsoft Azure**, utilizando uma arquitetura **Lakehouse** baseada no padrão **Medallion Architecture**.

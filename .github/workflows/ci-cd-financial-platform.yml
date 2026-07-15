@@ -230,3 +230,15 @@ jobs:
 
           echo ""
           echo "Financial Statement Analytics Platform"
+
+
+          on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:

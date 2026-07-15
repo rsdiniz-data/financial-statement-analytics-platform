@@ -1,0 +1,232 @@
+name: CI-CD Financial Statement Analytics Platform
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+
+  validate-platform:
+
+    name: Validate Platform
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Display workflow information
+        run: |
+          echo "=========================================="
+          echo "Financial Statement Analytics Platform"
+          echo "Continuous Integration Pipeline"
+          echo "=========================================="
+
+      - name: Validate root files
+        run: |
+
+          echo "Checking root files..."
+
+          test -f README.md
+          test -f LICENSE
+          test -f .gitignore
+
+          echo "Root files OK"
+
+      - name: Validate documentation
+        run: |
+
+          echo "Checking documentation..."
+
+          docs=(
+            "docs/README.md"
+            "docs/01_visao_geral.md"
+            "docs/02_arquitetura.md"
+            "docs/03_desenvolvimento.md"
+            "docs/04_modelagem_dimensional.md"
+            "docs/05_dicionario_dados.md"
+            "docs/06_operacao_plataforma.md"
+            "docs/07_governanca.md"
+            "docs/08_runbook_implantacao.md"
+            "docs/09_runbook_operacional.md"
+            "docs/10_padrao_nomenclatura.md"
+            "docs/11_checklist_implantacao.md"
+            "docs/12_troubleshooting.md"
+            "docs/13_entrega_valor.md"
+            "docs/14_inventario.md"
+            "docs/15_artigo_tecnico.md"
+          )
+
+          for file in "${docs[@]}"
+          do
+            test -f "$file"
+            echo "✔ $file"
+          done
+
+      - name: Validate notebooks
+        run: |
+
+          echo "Checking notebooks..."
+
+          test -d notebooks/bronze
+          test -d notebooks/silver
+          test -d notebooks/gold
+          test -d notebooks/governance
+
+          echo ""
+          echo "Notebook statistics"
+
+          echo "Bronze:"
+          find notebooks/bronze -type f | wc -l
+
+          echo "Silver:"
+          find notebooks/silver -type f | wc -l
+
+          echo "Gold:"
+          find notebooks/gold -type f | wc -l
+
+          echo "Governance:"
+          find notebooks/governance -type f | wc -l
+
+      - name: Validate images
+        run: |
+
+          test -d images
+
+          echo "Images folder OK"
+
+      - name: Repository summary
+        run: |
+
+          echo ""
+          echo "Repository Structure"
+          echo "--------------------"
+
+          find . -maxdepth 2
+
+  package-platform:
+
+    name: Package Repository
+
+    needs: validate-platform
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - name: Create package
+        run: |
+
+          mkdir release
+
+          cp README.md release/
+          cp LICENSE release/
+
+          cp -R docs release/
+          cp -R notebooks release/
+          cp -R images release/
+
+      - name: Upload package
+        uses: actions/upload-artifact@v4
+
+        with:
+          name: financial-statement-analytics-platform
+          path: release/
+
+  publish-platform:
+
+    name: Publish Platform (Simulation)
+
+    needs: package-platform
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Simulate Azure deployment
+        run: |
+
+          echo ""
+          echo "Publishing platform..."
+          echo ""
+
+          echo "Azure Data Lake Storage Gen2 ............. OK"
+          sleep 1
+
+          echo "Azure Databricks ......................... OK"
+          sleep 1
+
+          echo "Unity Catalog ............................ OK"
+          sleep 1
+
+          echo "Azure Data Factory ....................... OK"
+          sleep 1
+
+          echo "Delta Lake ............................... OK"
+          sleep 1
+
+          echo "Power BI Semantic Layer .................. OK"
+          sleep 1
+
+          echo ""
+          echo "Platform published successfully."
+
+  pipeline-summary:
+
+    name: Pipeline Summary
+
+    needs:
+      - validate-platform
+      - package-platform
+      - publish-platform
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Pipeline completed
+        run: |
+
+          echo ""
+          echo "========================================"
+          echo "PIPELINE EXECUTED SUCCESSFULLY"
+          echo "========================================"
+
+          echo ""
+          echo "Validated:"
+          echo "- Repository"
+          echo "- Documentation"
+          echo "- Notebooks"
+          echo "- Images"
+
+          echo ""
+          echo "Generated:"
+          echo "- Release package"
+
+          echo ""
+          echo "Simulated:"
+          echo "- Azure Deployment"
+
+          echo ""
+          echo "Practices demonstrated:"
+          echo "- Git"
+          echo "- GitHub"
+          echo "- GitHub Actions"
+          echo "- Continuous Integration"
+          echo "- Continuous Delivery"
+          echo "- DataOps"
+
+          echo ""
+          echo "Financial Statement Analytics Platform"

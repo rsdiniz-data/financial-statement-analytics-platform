@@ -355,9 +355,9 @@ Essa organização facilita futuras evoluções para cenários completos de impl
 
 # 🔄 GitHub Actions
 
-A automação do repositório é realizada através do **GitHub Actions**, responsável por executar os workflows definidos para validação e integração contínua.
+O projeto utiliza **GitHub Actions** para implementar o pipeline de **Continuous Integration (CI)**, automatizando validações sempre que alterações são enviadas ao repositório.
 
-A estrutura da solução contempla a pasta padrão utilizada pelo GitHub para execução dos workflows:
+Os workflows são organizados na estrutura padrão do GitHub:
 
 ```text
 .github/
@@ -365,13 +365,19 @@ A estrutura da solução contempla a pasta padrão utilizada pelo GitHub para ex
     └── ci-cd-financial-platform.yml
 ```
 
-A utilização do GitHub Actions demonstra a adoção de práticas modernas de Engenharia de Software aplicadas ao contexto de Engenharia de Dados.
+As validações automatizadas incluem:
 
----
+- Estrutura do repositório;
+- Documentação técnica;
+- Notebooks da plataforma;
+- Workflows do GitHub Actions;
+- Simulação das etapas de integração contínua (CI) e entrega contínua (CD).
 
-## 🚀 CI/CD Pipeline
+Essa abordagem reforça a adoção de práticas de **DevOps** e **DataOps**, garantindo maior rastreabilidade, padronização e qualidade durante a evolução da plataforma.
 
-O projeto utiliza GitHub Actions para validação automática da documentação, notebooks e estrutura do repositório.
+### 📸 Exemplo de execução
+
+Após cada *push* para a branch principal (ou execução manual do workflow), o GitHub Actions executa automaticamente o pipeline de validação.
 
 ![GitHub Actions](./images/github-actions-workflow.png)
 

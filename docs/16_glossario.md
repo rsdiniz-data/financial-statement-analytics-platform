@@ -374,3 +374,215 @@ O projeto demonstra práticas de DevOps por meio de:
 - organização do repositório;
 - documentação versionada;
 - automação de validações.
+
+# G
+
+## 🔹 Git
+
+Sistema distribuído de controle de versões utilizado para registrar, rastrear e gerenciar alterações realizadas em arquivos ao longo do desenvolvimento de um projeto.
+
+O Git permite que diferentes desenvolvedores trabalhem simultaneamente sobre a mesma base de código, mantendo o histórico completo de alterações.
+
+Entre suas principais funcionalidades destacam-se:
+
+- versionamento distribuído;
+- criação de branches;
+- controle de merges;
+- histórico de alterações;
+- recuperação de versões anteriores.
+
+### Aplicação no projeto
+
+Todo o código-fonte da plataforma é versionado utilizando Git, incluindo:
+
+- documentação técnica;
+- notebooks Databricks;
+- workflows do GitHub Actions;
+- imagens e diagramas;
+- scripts auxiliares;
+- arquivos de configuração.
+
+---
+
+## 🔹 GitHub
+
+Plataforma de hospedagem de repositórios Git utilizada para armazenamento, colaboração e gerenciamento do código-fonte.
+
+Além do versionamento, o GitHub oferece recursos como:
+
+- Pull Requests;
+- Issues;
+- GitHub Actions;
+- Wiki;
+- gerenciamento de releases;
+- controle de permissões.
+
+### Aplicação no projeto
+
+O projeto é mantido em um repositório GitHub, que centraliza:
+
+- documentação completa da solução;
+- notebooks desenvolvidos em PySpark;
+- workflow de CI/CD;
+- diagramas da arquitetura;
+- estrutura da plataforma.
+
+---
+
+## 🔹 GitHub Actions
+
+Serviço de automação integrado ao GitHub utilizado para implementação de pipelines de Integração Contínua (CI) e Entrega Contínua (CD).
+
+Os workflows são definidos por arquivos YAML armazenados na pasta:
+
+```text
+.github/workflows/
+```
+
+### Aplicação no projeto
+
+O projeto implementa um workflow responsável por:
+
+- validar a estrutura do repositório;
+- verificar a documentação técnica;
+- validar a organização dos notebooks;
+- gerar um pacote da solução;
+- simular o processo de publicação da plataforma;
+- apresentar um resumo da execução do pipeline.
+
+---
+
+# L
+
+## 🔹 Lakehouse
+
+Arquitetura moderna de dados que combina características de um Data Lake com funcionalidades tradicionalmente encontradas em Data Warehouses.
+
+Essa abordagem permite unir:
+
+- armazenamento escalável;
+- processamento distribuído;
+- governança centralizada;
+- consultas analíticas de alto desempenho.
+
+### Aplicação no projeto
+
+Toda a plataforma foi desenvolvida seguindo o conceito de Lakehouse, utilizando:
+
+- Azure Data Lake Storage Gen2;
+- Azure Databricks;
+- Delta Lake;
+- Unity Catalog.
+
+---
+
+## 🔹 Medallion Architecture
+
+Arquitetura de processamento de dados baseada em múltiplas camadas de refinamento progressivo.
+
+Cada camada possui responsabilidades específicas durante o pipeline.
+
+### Camadas utilizadas
+
+| Camada | Finalidade |
+|----------|------------|
+| Bronze | Ingestão dos dados |
+| Silver | Tratamento e padronização |
+| Gold | Disponibilização para consumo analítico |
+
+### Aplicação no projeto
+
+Toda a solução segue a Arquitetura Medallion para garantir:
+
+- separação de responsabilidades;
+- qualidade dos dados;
+- governança;
+- reutilização das entidades analíticas.
+
+---
+
+# M
+
+## 🔹 Microsoft Entra ID
+
+Serviço de gerenciamento de identidades e controle de acesso da Microsoft Azure.
+
+É responsável pela autenticação de usuários, aplicações e serviços corporativos.
+
+Entre seus principais recursos destacam-se:
+
+- autenticação centralizada;
+- gerenciamento de grupos;
+- autenticação multifator (MFA);
+- App Registrations;
+- integração com serviços Azure.
+
+### Aplicação no projeto
+
+O Microsoft Entra ID é utilizado para:
+
+- autenticação da Microsoft Graph API;
+- gerenciamento dos grupos corporativos;
+- integração com Azure Databricks;
+- sincronização de usuários via SCIM.
+
+---
+
+## 🔹 Microsoft Graph API
+
+Interface REST disponibilizada pela Microsoft para acesso programático aos serviços do Microsoft 365.
+
+Permite consultar e manipular recursos como:
+
+- SharePoint Online;
+- OneDrive;
+- Microsoft Teams;
+- Outlook;
+- usuários e grupos.
+
+### Aplicação no projeto
+
+Os notebooks da camada Bronze utilizam a Microsoft Graph API para realizar automaticamente o download dos arquivos armazenados no SharePoint Online.
+
+A autenticação é realizada utilizando OAuth 2.0.
+
+---
+
+## 🔹 Modelo Dimensional
+
+Modelo de organização de dados voltado para consultas analíticas e construção de indicadores de negócio.
+
+Normalmente é composto por:
+
+- tabelas fato;
+- tabelas dimensão;
+- relacionamentos otimizados para análise.
+
+### Aplicação no projeto
+
+A camada Gold implementa um modelo dimensional baseado em Star Schema contendo:
+
+- dimensão Plano de Contas;
+- dimensão Calendário;
+- fato Resultado Financeiro.
+
+Esse modelo serve como base para construção de dashboards e indicadores financeiros.
+
+---
+
+## 🔹 Microsoft SharePoint Online
+
+Serviço colaborativo da Microsoft utilizado para armazenamento e compartilhamento de documentos corporativos.
+
+Além da interface web, seus arquivos podem ser acessados programaticamente através da Microsoft Graph API.
+
+### Aplicação no projeto
+
+O SharePoint Online representa a principal fonte de dados da plataforma.
+
+Os arquivos:
+
+- PlanoContas.xlsx
+- DFP.xlsx
+
+são consumidos automaticamente durante a ingestão da camada Bronze, eliminando a necessidade de uploads manuais.

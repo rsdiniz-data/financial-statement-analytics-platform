@@ -227,6 +227,31 @@ A documentação da plataforma está organizada em documentos independentes para
 | 📑 [14. Apêndice A – Inventário dos Recursos da Plataforma](./docs/14_inventario.md) | Inventário dos recursos Azure, Databricks, Data Factory, Unity Catalog e GitHub. |
 | 📘 [15. Artigo Técnico](./docs/15_artigo_tecnico.md) | Documentação técnica consolidada contendo arquitetura, implementação, decisões de projeto e boas práticas adotadas durante o desenvolvimento da plataforma. |
 
+
+# 📌 Navegação
+
+A documentação da plataforma está organizada em documentos independentes para facilitar a consulta, a rastreabilidade e a compreensão de todos os componentes da solução, abrangendo arquitetura, desenvolvimento, governança, automação, operação e documentação técnica.
+
+| Documento | Descrição |
+|-----------|-----------|
+| 📄 [01. Visão Geral do Projeto](./docs/01_visao_geral.md) | Contexto, objetivos, escopo, motivação, benefícios e visão geral da plataforma. |
+| 🏗️ [02. Arquitetura da Solução](./docs/02_arquitetura.md) | Arquitetura Lakehouse, componentes Azure, arquitetura Medallion, fluxo de dados e integração entre os serviços da plataforma. |
+| ⚙️ [03. Desenvolvimento do Projeto](./docs/03_desenvolvimento.md) | Organização dos notebooks, implementação dos pipelines, processamento distribuído e transformações nas camadas Bronze, Silver e Gold. |
+| 📊 [04. Modelagem Dimensional](./docs/04_modelagem_dimensional.md) | Modelo dimensional, dimensões, tabela fato, relacionamentos e estrutura analítica utilizada na camada Gold. |
+| 🗂️ [05. Dicionário de Dados](./docs/05_dicionario_dados.md) | Descrição das tabelas, colunas, tipos de dados, metadados e regras de negócio implementadas na plataforma. |
+| 🖥️ [06. Operação da Plataforma](./docs/06_operacao_plataforma.md) | Execução dos pipelines, monitoramento, validações operacionais, administração e manutenção da solução. |
+| 🔐 [07. Governança de Dados](./docs/07_governanca.md) | Unity Catalog, RBAC, ACL, SCIM, Data Lineage, segurança, auditoria e gerenciamento centralizado dos ativos de dados. |
+| 🔄 [08. DevOps, DataOps e Versionamento](./docs/08_devops_dataops_versionamento.md) | Versionamento do código, Git, GitHub, GitHub Actions, práticas de DevOps, DataOps, CI/CD e automação dos workflows da plataforma. |
+| 🚀 [09. Runbook de Implantação](./docs/09_runbook_implantacao.md) | Provisionamento da infraestrutura Azure, configuração do ambiente e implantação da plataforma analítica. |
+| 🛠️ [10. Runbook Operacional](./docs/10_runbook_operacional.md) | Procedimentos operacionais, monitoramento, manutenção preventiva, execução dos pipelines e suporte da solução. |
+| 🏷️ [11. Padrão de Nomenclatura](./docs/11_padrao_nomenclatura.md) | Convenções de nomenclatura adotadas para recursos Azure, Databricks, Data Factory, pipelines e objetos de dados. |
+| 🧯 [12. Troubleshooting](./docs/12_troubleshooting.md) | Diagnóstico, investigação e resolução dos principais cenários de falha da plataforma. |
+| ✅ [13. Checklist de Implantação](./docs/13_checklist_implantacao.md) | Lista de verificação para validação completa da infraestrutura, configurações e componentes da solução. |
+| 💡 [14. Entrega de Valor](./docs/14_entrega_valor.md) | Benefícios técnicos, operacionais e de negócio proporcionados pela arquitetura e pelas práticas adotadas no projeto. |
+| 📦 [15. Apêndice A – Inventário dos Recursos da Plataforma](./docs/15_inventario.md) | Inventário completo dos recursos Azure, Azure Databricks, Azure Data Factory, Unity Catalog, GitHub e demais componentes da solução. |
+| 📚 [16. Apêndice B – Glossário Técnico](./docs/16_glossario.md) | Definição dos principais conceitos, tecnologias, padrões e termos utilizados ao longo da documentação do projeto. |
+| 📘 [17. Artigo Técnico](./docs/17_artigo_tecnico.md) | Documento técnico consolidado contendo arquitetura, decisões de projeto, implementação dos notebooks, governança, DataOps, DevOps e boas práticas adotadas durante o desenvolvimento da plataforma. |
+
 ---
 
 # 📄 Documentação Técnica

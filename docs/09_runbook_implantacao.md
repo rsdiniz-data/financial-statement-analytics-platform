@@ -1,4 +1,4 @@
-# 8. Runbook de Implantação
+# 9. Runbook de Implantação
 
 > Este runbook apresenta a sequência recomendada para implantação da plataforma, desde o provisionamento da infraestrutura até a validação do ambiente.
 

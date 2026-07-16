@@ -171,7 +171,7 @@ Detalhes sobre arquitetura, governança e implementação podem ser encontrados 
 - 👉 [Arquitetura da Solução](../../docs/02_arquitetura.md)
 - 👉 [Desenvolvimento do Projeto](../../docs/03_desenvolvimento.md)
 - 👉 [Governança de Dados](../../docs/07_governanca.md)
-- 👉 [Artigo Técnico](../../docs/15_artigo_tecnico.md)
+- 👉 [Artigo Técnico](../../docs/17_artigo_tecnico.md)
 
 ---
 

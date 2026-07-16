@@ -586,3 +586,282 @@ Os arquivos:
 - DFP.xlsx
 
 são consumidos automaticamente durante a ingestão da camada Bronze, eliminando a necessidade de uploads manuais.
+
+# O
+
+## 🔹 OAuth 2.0
+
+Protocolo de autorização utilizado para permitir que aplicações acessem recursos protegidos de forma segura, sem expor credenciais diretamente.
+
+O OAuth 2.0 baseia-se na emissão de tokens temporários de acesso, que podem ser utilizados por aplicações autenticadas para consumir APIs e serviços protegidos.
+
+### Aplicação no projeto
+
+Os notebooks da camada Bronze utilizam OAuth 2.0 para autenticação junto à Microsoft Graph API.
+
+O processo ocorre de forma automatizada através das credenciais armazenadas no Azure Key Vault, permitindo acessar os arquivos hospedados no SharePoint Online.
+
+---
+
+# P
+
+## 🔹 Pipeline
+
+Conjunto organizado de etapas responsáveis pela execução de um processo de tratamento de dados.
+
+Cada etapa possui uma responsabilidade específica, permitindo automatizar desde a ingestão até a disponibilização dos dados para consumo analítico.
+
+### Aplicação no projeto
+
+O pipeline da plataforma é composto pelas seguintes fases:
+
+- ingestão dos arquivos do SharePoint Online;
+- processamento na camada Bronze;
+- transformações na camada Silver;
+- modelagem dimensional na camada Gold;
+- publicação das entidades analíticas.
+
+Todo o fluxo é orquestrado pelo Azure Data Factory.
+
+---
+
+## 🔹 PySpark
+
+API do Apache Spark para desenvolvimento de aplicações utilizando a linguagem Python.
+
+O PySpark combina a simplicidade do Python com a capacidade de processamento distribuído do Apache Spark.
+
+Entre suas principais funcionalidades estão:
+
+- manipulação de DataFrames;
+- processamento distribuído;
+- transformações SQL;
+- integração nativa com Delta Lake.
+
+### Aplicação no projeto
+
+Todos os notebooks da plataforma foram implementados utilizando PySpark.
+
+As transformações realizadas nas camadas Bronze, Silver e Gold utilizam exclusivamente recursos do Apache Spark.
+
+---
+
+## 🔹 PySpark DataFrame
+
+Estrutura tabular distribuída utilizada pelo Apache Spark para manipulação de grandes volumes de dados.
+
+Os DataFrames oferecem APIs otimizadas para leitura, transformação e gravação de dados em diferentes formatos.
+
+### Aplicação no projeto
+
+Após a leitura dos arquivos Excel utilizando Pandas, os dados são convertidos para PySpark DataFrames, permitindo:
+
+- processamento distribuído;
+- integração com Delta Lake;
+- publicação no Unity Catalog;
+- execução otimizada sobre clusters Spark.
+
+---
+
+# R
+
+## 🔹 RBAC (Role-Based Access Control)
+
+Modelo de controle de acesso baseado em papéis (roles).
+
+Nesse modelo, as permissões são atribuídas aos grupos de usuários, e não diretamente aos usuários individuais.
+
+Essa abordagem simplifica a administração da segurança e reduz riscos operacionais.
+
+### Aplicação no projeto
+
+As permissões são organizadas utilizando os grupos:
+
+- `data_engineers`
+- `bi_analysts`
+- `business_users`
+
+Cada grupo possui permissões específicas sobre os objetos governados pelo Unity Catalog.
+
+---
+
+# S
+
+## 🔹 SCIM (System for Cross-domain Identity Management)
+
+Padrão utilizado para sincronização automática de usuários e grupos entre sistemas de gerenciamento de identidade.
+
+O SCIM reduz atividades administrativas ao manter usuários e grupos sincronizados entre diferentes plataformas.
+
+### Aplicação no projeto
+
+O Microsoft Entra ID sincroniza automaticamente os grupos corporativos com o Azure Databricks através do SCIM.
+
+Dessa forma, as permissões atribuídas no Unity Catalog permanecem alinhadas com a estrutura organizacional da empresa.
+
+---
+
+## 🔹 Schema
+
+Estrutura lógica utilizada para organizar objetos dentro de um catálogo de banco de dados.
+
+Os schemas permitem separar tabelas, views e demais objetos conforme sua finalidade.
+
+### Aplicação no projeto
+
+O catálogo `finance` está organizado em três schemas principais:
+
+- `bronze`
+- `silver`
+- `gold`
+
+Cada schema representa uma etapa da Arquitetura Medallion.
+
+---
+
+## 🔹 Secret Scope
+
+Recurso do Azure Databricks utilizado para armazenar e acessar credenciais de forma segura.
+
+Os Secret Scopes permitem que notebooks recuperem informações sensíveis sem expor valores diretamente no código-fonte.
+
+### Aplicação no projeto
+
+Todos os notebooks recuperam credenciais utilizando um Secret Scope integrado ao Azure Key Vault.
+
+Entre os segredos utilizados destacam-se:
+
+- Tenant ID;
+- Client ID;
+- Client Secret;
+- Storage Account;
+- identificadores do SharePoint;
+- parâmetros do Unity Catalog.
+
+---
+
+## 🔹 Semantic View (View Semântica)
+
+View construída sobre tabelas analíticas com o objetivo de simplificar o consumo dos dados pelas ferramentas de Business Intelligence.
+
+As Views Semânticas ocultam detalhes técnicos da modelagem física, oferecendo uma estrutura mais intuitiva para consultas.
+
+### Aplicação no projeto
+
+A camada Gold publica views semânticas como:
+
+- `vw_d_plano_conta`
+- `vw_ft_resultado`
+- `vw_d_calendario`
+
+Essas views são destinadas principalmente aos usuários de negócio e ferramentas analíticas.
+
+---
+
+## 🔹 SharePoint Online
+
+Serviço de colaboração e armazenamento de documentos do Microsoft 365.
+
+Além da interface web, seus arquivos podem ser acessados programaticamente através da Microsoft Graph API.
+
+### Aplicação no projeto
+
+O SharePoint Online representa a principal fonte de dados da plataforma.
+
+Os arquivos utilizados durante a ingestão são:
+
+- `PlanoContas.xlsx`
+- `DFP.xlsx`
+
+Todo o processo ocorre automaticamente, sem necessidade de intervenção manual.
+
+---
+
+## 🔹 Silver Layer
+
+Segunda camada da Arquitetura Medallion.
+
+Nesta etapa, os dados provenientes da Bronze passam por processos de tratamento e padronização.
+
+Entre as principais atividades destacam-se:
+
+- limpeza dos dados;
+- remoção de inconsistências;
+- padronização de formatos;
+- aplicação das primeiras regras de negócio;
+- preparação para consumo analítico.
+
+### Aplicação no projeto
+
+A camada Silver gera entidades tratadas utilizadas posteriormente pela camada Gold para construção do modelo dimensional.
+
+As tabelas são publicadas no schema:
+
+```text
+finance.silver
+```
+
+---
+
+## 🔹 SQL Warehouse
+
+Recurso do Azure Databricks destinado à execução de consultas SQL de alto desempenho sobre tabelas Delta Lake.
+
+O SQL Warehouse permite que ferramentas externas acessem os dados da plataforma utilizando conexões SQL padronizadas.
+
+### Aplicação no projeto
+
+O SQL Warehouse pode ser utilizado como ponto de acesso para:
+
+- Microsoft Power BI;
+- consultas SQL;
+- exploração analítica;
+- construção de dashboards corporativos.
+
+---
+
+## 🔹 Star Schema
+
+Modelo dimensional composto por uma tabela fato central conectada a diversas tabelas dimensão.
+
+Esse modelo é amplamente utilizado em Data Warehouses por facilitar consultas analíticas e melhorar o desempenho das ferramentas de BI.
+
+### Aplicação no projeto
+
+A camada Gold implementa um Star Schema composto por:
+
+- `d_plano_conta`
+- `d_calendario`
+- `ft_resultado`
+
+Esse modelo representa a base analítica da plataforma.
+
+---
+
+# T
+
+## 🔹 Time Travel
+
+Funcionalidade do Delta Lake que permite consultar versões anteriores de uma tabela.
+
+Essa capacidade possibilita recuperar informações históricas sem necessidade de backups adicionais.
+
+### Aplicação no projeto
+
+O recurso é demonstrado no notebook:
+
+- `99_delta_lake_acid_demo.py`
+
+São apresentadas consultas utilizando diferentes versões das tabelas Delta.
+
+---
+
+## 🔹 Transações ACID
+
+Conjunto de propriedades que garantem integridade durante operações de leitura e escrita em tabelas Delta.
+
+As transações ACID asseguram que alterações sejam executadas de forma completa, consistente e segura, mesmo em ambientes distribuídos.
+
+### Aplicação no projeto
+
+Todas as tabelas persistidas em Delta Lake utilizam suporte nativo a transações ACID, garantindo maior confiabilidade durante os processos de ingestão e transformação.

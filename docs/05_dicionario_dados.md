@@ -66,4 +66,4 @@ Dimensão temporal utilizada para organização cronológica das análises e ind
 * 🏗️ [Arquitetura da Solução](./02_arquitetura.md)
 * ⭐ [Modelagem Dimensional](./04_modelagem_dimensional.md)
 * 🖥️ [Operação da Plataforma](./06_operacao_plataforma.md)
-* 📘 [Artigo Técnico](./15_artigo_tecnico.md)
+* 📘 [Artigo Técnico](./17_artigo_tecnico.md)

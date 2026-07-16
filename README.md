@@ -464,14 +464,16 @@ financial-statement-analytics-platform/
 │   ├── 05_dicionario_dados.md
 │   ├── 06_operacao_plataforma.md
 │   ├── 07_governanca.md
-│   ├── 08_runbook_implantacao.md
-│   ├── 09_runbook_operacional.md
-│   ├── 10_padrao_nomenclatura.md
-│   ├── 11_checklist_implantacao.md
+│   ├── 08_devops_dataops_versionamento.md
+│   ├── 09_runbook_implantacao.md
+│   ├── 10_runbook_operacional.md
+│   ├── 11_padrao_nomenclatura.md
 │   ├── 12_troubleshooting.md
-│   ├── 13_entrega_valor.md
-│   ├── 14_inventario.md
-│   ├── 15_artigo_tecnico.md
+│   ├── 13_checklist_implantacao.md
+│   ├── 14_entrega_valor.md
+│   ├── 15_inventario.md
+│   ├── 16_glossario.md
+│   ├── 17_artigo_tecnico.md
 │   └── README.md
 │
 ├── images/
@@ -492,13 +494,9 @@ financial-statement-analytics-platform/
 | Diretório | Finalidade |
 |-----------|------------|
 | **.github/workflows** | Workflows do GitHub Actions responsáveis pela automação de validações e integração contínua (CI/CD). |
-| **data/** | Arquivos utilizados para demonstração da solução, incluindo dados de exemplo e arquivos auxiliares. |
 | **docs/** | Documentação técnica completa da plataforma, organizada em módulos independentes. |
 | **images/** | Diagramas, arquiteturas, capturas de tela e demais recursos visuais utilizados na documentação. |
-| **infrastructure/** | Artefatos relacionados ao provisionamento e configuração da infraestrutura Azure. |
 | **notebooks/** | Notebooks Databricks responsáveis pela implementação das camadas Bronze, Silver, Gold e componentes compartilhados. |
-| **pipelines/** | Definições e artefatos relacionados aos pipelines de orquestração da plataforma. |
-| **scripts/** | Scripts auxiliares utilizados durante implantação, configuração e manutenção da solução. |
 
 Essa organização segue boas práticas de Engenharia de Dados e Engenharia de Software, promovendo separação de responsabilidades, facilidade de manutenção e escalabilidade para futuras evoluções da plataforma.
 

@@ -141,3 +141,8 @@ Este inventário garante:
 - [Parte 1](https://github.com/rsdiniz-data/financial-statement-analytics-platform/blob/main/images/inventario_recursos_1.png)
 - [Parte 2](https://github.com/rsdiniz-data/financial-statement-analytics-platform/blob/main/images/inventario_recursos_2.png)
 - [Parte 3](https://github.com/rsdiniz-data/financial-statement-analytics-platform/blob/main/images/inventario_recursos_3.png)
+
+
+📷 ![Inventário 1](../images/inventario_recursos_1.png)
+📷 ![Inventário 2](../images/inventario_recursos_2.png)
+📷 ![Inventário 3](../images/inventario_recursos_3.png)

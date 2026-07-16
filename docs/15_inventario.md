@@ -122,7 +122,7 @@ Este apêndice consolida todos os recursos utilizados na solução **Financial S
 | Recurso | Prefixo | Exemplo | Plataforma | Finalidade |
 |----------|----------|----------|-------------|-------------|
 | Repository | repo | financial-statement-analytics-platform | GitHub | Código-fonte |
-| GitHub Actions | gha | ci_cd.yml | GitHub | CI/CD |
+| GitHub Actions | gha | ci-cd-financial-platform.yml | GitHub | CI/CD |
 
 ---
 

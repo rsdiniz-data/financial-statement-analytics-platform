@@ -207,29 +207,6 @@ A arquitetura foi projetada para proporcionar:
 
 # 📌 Navegação
 
-A documentação da plataforma está organizada em documentos independentes para facilitar a consulta e a rastreabilidade entre arquitetura, implementação, governança e operação.
-
-| Documento | Descrição |
-|-----------|-----------|
-| 📄 [01. Visão Geral do Projeto](./docs/01_visao_geral.md) | Contexto, objetivos, justificativa, escopo e benefícios da plataforma. |
-| 🏗️ [02. Arquitetura da Solução](./docs/02_arquitetura.md) | Arquitetura lógica, componentes Azure, fluxo de dados e arquitetura Medallion. |
-| ⚙️ [03. Desenvolvimento do Projeto](./docs/03_desenvolvimento.md) | Implementação dos notebooks, pipelines, processamento distribuído e arquitetura das camadas Bronze, Silver e Gold. |
-| 📊 [04. Modelagem Dimensional](./docs/04_modelagem_dimensional.md) | Modelo dimensional, tabelas fato, dimensões e estrutura analítica da camada Gold. |
-| 🗂️ [05. Dicionário de Dados](./docs/05_dicionario_dados.md) | Descrição das tabelas, colunas, tipos de dados e regras de negócio. |
-| 🖥️ [06. Operação da Plataforma](./docs/06_operacao_plataforma.md) | Execução dos pipelines, monitoramento, validações operacionais e administração da solução. |
-| 🔐 [07. Governança de Dados](./docs/07_governanca.md) | Unity Catalog, RBAC, ACL, SCIM, Data Lineage, segurança e gerenciamento de credenciais. |
-| 🚀 [08. Runbook de Implantação](./docs/08_runbook_implantacao.md) | Provisionamento da infraestrutura, configuração do ambiente e implantação da plataforma. |
-| 🛠️ [09. Runbook Operacional](./docs/09_runbook_operacional.md) | Procedimentos operacionais, manutenção, monitoramento e suporte da solução. |
-| 🏷️ [10. Padrão de Nomenclatura](./docs/10_padrao_nomenclatura.md) | Convenções de nomenclatura para recursos Azure, Databricks, pipelines e objetos de dados. |
-| ✅ [11. Checklist de Implantação](./docs/11_checklist_implantacao.md) | Lista de verificação para validação da implantação da plataforma. |
-| 🧯 [12. Troubleshooting](./docs/12_troubleshooting.md) | Diagnóstico e resolução dos principais cenários de falha. |
-| 💡 [13. Entrega de Valor](./docs/13_entrega_valor.md) | Benefícios técnicos, operacionais e de negócio proporcionados pela solução. |
-| 📑 [14. Apêndice A – Inventário dos Recursos da Plataforma](./docs/14_inventario.md) | Inventário dos recursos Azure, Databricks, Data Factory, Unity Catalog e GitHub. |
-| 📘 [15. Artigo Técnico](./docs/15_artigo_tecnico.md) | Documentação técnica consolidada contendo arquitetura, implementação, decisões de projeto e boas práticas adotadas durante o desenvolvimento da plataforma. |
-
-
-# 📌 Navegação
-
 A documentação da plataforma está organizada em documentos independentes para facilitar a consulta, a rastreabilidade e a compreensão de todos os componentes da solução, abrangendo arquitetura, desenvolvimento, governança, automação, operação e documentação técnica.
 
 | Documento | Descrição |

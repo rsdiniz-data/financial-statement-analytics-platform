@@ -102,18 +102,22 @@ A plataforma adota a **Arquitetura Medallion**, estruturando o Data Lake nas cam
 
 * 🔐 [Governança de Dados](./07_governanca.md)
 
-* 🚀 [Runbook de Implantação](./08_runbook_implantacao.md)
+* 🔄 [DevOps, DataOps e Versionamento](./08_devops_dataops_versionamento.md)
 
-* 🛠️ [Runbook Operacional](./09_runbook_operacional.md)
+* 🚀 [Runbook de Implantação](./09_runbook_implantacao.md)
 
-* 🏷️ [Padrão de Nomenclatura](./10_padrao_nomenclatura.md)
+* 🛠️ [Runbook Operacional](./10_runbook_operacional.md)
 
-* ✅ [Checklist de Implantação](./11_checklist_implantacao.md)
+* 🏷️ [Padrão de Nomenclatura](./11_padrao_nomenclatura.md)
 
 * 🧯 [Troubleshooting](./12_troubleshooting.md)
 
-* 💡 [Entrega de Valor](./13_entrega_valor.md)
+* ✅ [Checklist de Implantação](./13_checklist_implantacao.md)
 
-* 📑 [Apêndice A – Inventário dos Recursos da Plataforma](./14_inventario.md)
+* 💡 [Entrega de Valor](./14_entrega_valor.md)
 
-* 📘 [Artigo Técnico Completo](./15_artigo_tecnico.md)
+* 📑 [Apêndice A – Inventário dos Recursos da Plataforma](./15_inventario.md)
+
+* 📚 [Apêndice B – Glossário Técnico](./16_glossario.md)
+
+* 📘 [Artigo Técnico Completo](./17_artigo_tecnico.md)

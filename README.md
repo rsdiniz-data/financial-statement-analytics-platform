@@ -227,7 +227,6 @@ A documentação da plataforma está organizada em documentos independentes para
 | 💡 [14. Entrega de Valor](./docs/14_entrega_valor.md) | Benefícios técnicos, operacionais e de negócio proporcionados pela arquitetura e pelas práticas adotadas no projeto. |
 | 📦 [15. Apêndice A – Inventário dos Recursos da Plataforma](./docs/15_inventario.md) | Inventário completo dos recursos Azure, Azure Databricks, Azure Data Factory, Unity Catalog, GitHub e demais componentes da solução. |
 | 📚 [16. Apêndice B – Glossário Técnico](./docs/16_glossario.md) | Definição dos principais conceitos, tecnologias, padrões e termos utilizados ao longo da documentação do projeto. |
-| 📘 [17. Artigo Técnico](./docs/17_artigo_tecnico.md) | Documento técnico consolidado contendo arquitetura, decisões de projeto, implementação dos notebooks, governança, DataOps, DevOps e boas práticas adotadas durante o desenvolvimento da plataforma. |
 
 ---
 
@@ -250,7 +249,7 @@ O documento apresenta, de forma integrada:
 
 Este material estabelece a rastreabilidade entre os requisitos do projeto, as decisões arquiteturais e a implementação técnica da solução.
 
-📄 **[Acessar documentação técnica completa](./docs/15_artigo_tecnico.md)**
+📄 **[Acessar documentação técnica completa](./docs/17_artigo_tecnico.md)**
 
 ---
 

@@ -29,8 +29,8 @@ A leitura é realizada através de tabelas Delta Lake registradas no Unity Catal
 
 ## 📓 Notebooks
 
-- [03_silver_ingest_plano_conta.py](./03_silver_ingest_plano_conta.py)  
-- [04_silver_ingest_resultado.py](./04_silver_ingest_resultado.py)  
+- [03_silver_transform_plano_conta.py](./03_silver_transform_plano_conta.py)  
+- [04_silver_transform_resultado.py](./04_silver_transform_resultado.py)  
 
 ---
 

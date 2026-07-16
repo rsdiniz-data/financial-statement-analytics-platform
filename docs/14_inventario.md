@@ -135,3 +135,9 @@ Este inventário garante:
 - Facilidade de manutenção e troubleshooting  
 - Apoio à evolução da arquitetura  
 - Visão centralizada do ecossistema de dados
+
+## 🔗 Visualizar inventário completo
+
+- Parte 1
+- Parte 2
+- Parte 3

@@ -158,4 +158,4 @@ As atividades do pipeline seguem a nomenclatura dos notebooks correspondentes.
 
 A relação completa dos recursos provisionados está disponível em:
 
-👉 [Apêndice A – Inventário dos Recursos da Plataforma](./14_inventario.md)
+👉 [Apêndice A – Inventário dos Recursos da Plataforma](./15_inventario.md)

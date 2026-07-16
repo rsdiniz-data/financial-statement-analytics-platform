@@ -1,4 +1,4 @@
-# 📖 Glossário Técnico
+# 📖 Apêndice B — Glossário Técnico
 
 Este glossário reúne os principais conceitos, tecnologias, serviços e termos utilizados ao longo da documentação da **Financial Statement Analytics Platform**.
 

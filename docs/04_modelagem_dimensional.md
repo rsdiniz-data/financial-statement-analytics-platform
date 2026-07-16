@@ -117,7 +117,7 @@ A modelagem dimensional proporciona:
 * 🏗️ [Arquitetura da Solução](./02_arquitetura.md)
 * ⚙️ [Desenvolvimento do Projeto](./03_desenvolvimento.md)
 * 📊 [Dicionário de Dados](./05_dicionario_dados.md)
-* 📘 [Artigo Técnico](./15_artigo_tecnico.md)
+* 📘 [Artigo Técnico](./17_artigo_tecnico.md)
 
 ### 💻 Notebooks
 

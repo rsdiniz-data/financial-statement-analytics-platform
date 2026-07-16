@@ -1,4 +1,4 @@
-# 📝 15. Artigo Técnico — Financial Statement Analytics Platform
+# 📝 17. Artigo Técnico — Financial Statement Analytics Platform
 
 Este artigo apresenta a construção da solução **Financial Statement Analytics Platform**, uma arquitetura analítica moderna baseada em **Azure Databricks, Azure Data Factory, Delta Lake e Medallion Architecture**, aplicada ao processamento e análise de demonstrações financeiras.
 

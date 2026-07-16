@@ -136,7 +136,7 @@ Este inventário garante:
 - Apoio à evolução da arquitetura  
 - Visão centralizada do ecossistema de dados
 
-## 🔗 Visualizar inventário completo
+## 🔗 Inventário completo
 
 📷 ![Inventário 1](../images/inventario_recursos_1.png)
 📷 ![Inventário 2](../images/inventario_recursos_2.png)

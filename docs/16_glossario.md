@@ -758,25 +758,6 @@ Essas views são destinadas principalmente aos usuários de negócio e ferrament
 
 ---
 
-## 🔹 SharePoint Online
-
-Serviço de colaboração e armazenamento de documentos do Microsoft 365.
-
-Além da interface web, seus arquivos podem ser acessados programaticamente através da Microsoft Graph API.
-
-### Aplicação no projeto
-
-O SharePoint Online representa a principal fonte de dados da plataforma.
-
-Os arquivos utilizados durante a ingestão são:
-
-- `PlanoContas.xlsx`
-- `DFP.xlsx`
-
-Todo o processo ocorre automaticamente, sem necessidade de intervenção manual.
-
----
-
 ## 🔹 Silver Layer
 
 Segunda camada da Arquitetura Medallion.
@@ -865,3 +846,147 @@ As transações ACID asseguram que alterações sejam executadas de forma comple
 ### Aplicação no projeto
 
 Todas as tabelas persistidas em Delta Lake utilizam suporte nativo a transações ACID, garantindo maior confiabilidade durante os processos de ingestão e transformação.
+
+# U
+
+## 🔹 Unity Catalog
+
+Solução de governança de dados do Azure Databricks responsável pelo gerenciamento centralizado dos ativos analíticos da plataforma.
+
+O Unity Catalog fornece uma camada unificada para administração de:
+
+- catálogos;
+- schemas;
+- tabelas;
+- views;
+- volumes;
+- permissões;
+- metadados;
+- auditoria.
+
+Além do gerenciamento centralizado, o Unity Catalog simplifica a implementação de políticas de segurança e governança em ambientes corporativos.
+
+### Aplicação no projeto
+
+O projeto utiliza o catálogo corporativo:
+
+```text
+finance
+```
+
+Organizado nos seguintes schemas:
+
+- `bronze`
+- `silver`
+- `gold`
+
+As principais responsabilidades do Unity Catalog na solução são:
+
+- gerenciamento centralizado dos ativos de dados;
+- implementação das políticas de RBAC e ACL;
+- controle das permissões de acesso;
+- publicação das tabelas analíticas;
+- disponibilização das views semânticas;
+- apoio à rastreabilidade e governança dos dados.
+
+---
+
+# V
+
+## 🔹 Versionamento
+
+Prática de registrar, controlar e documentar todas as alterações realizadas ao longo do ciclo de vida de uma solução.
+
+O versionamento permite manter um histórico completo das modificações, facilitando a colaboração entre equipes, auditorias, manutenção corretiva e evolução contínua da plataforma.
+
+Além do código-fonte, também podem ser versionados documentos, scripts, diagramas e demais artefatos do projeto.
+
+### Aplicação no projeto
+
+O versionamento é aplicado em diferentes componentes da plataforma, incluindo:
+
+- documentação técnica;
+- notebooks Databricks;
+- workflows do GitHub Actions;
+- scripts auxiliares;
+- diagramas da arquitetura;
+- arquivos de configuração.
+
+O projeto também demonstra o versionamento nativo das tabelas analíticas através dos recursos disponibilizados pelo Delta Lake.
+
+---
+
+## 🔹 View
+
+Objeto lógico utilizado para disponibilizar consultas previamente definidas sobre uma ou mais tabelas.
+
+As views simplificam o acesso aos dados, abstraindo detalhes da estrutura física das tabelas e promovendo maior padronização das consultas.
+
+### Aplicação no projeto
+
+As principais views publicadas na camada Gold são:
+
+- `vw_d_plano_conta`
+- `vw_ft_resultado`
+- `vw_d_calendario`
+
+Essas views servem como camada de abstração para ferramentas de Business Intelligence e usuários de negócio.
+
+---
+
+# ✅ Resumo
+
+Ao longo da documentação, este glossário apresenta os principais conceitos utilizados na implementação da **Financial Statement Analytics Platform**, servindo como referência para consulta durante o entendimento da arquitetura e dos componentes da solução.
+
+Os termos abordam desde tecnologias da plataforma Microsoft Azure até conceitos amplamente utilizados em Engenharia de Dados, Analytics Engineering, DevOps e DataOps.
+
+Entre os principais assuntos contemplados estão:
+
+- Apache Spark e PySpark;
+- Azure Databricks;
+- Azure Data Factory;
+- Azure Data Lake Storage Gen2;
+- Azure Key Vault;
+- Microsoft Entra ID;
+- Microsoft Graph API;
+- OAuth 2.0;
+- Unity Catalog;
+- Delta Lake;
+- Arquitetura Lakehouse;
+- Arquitetura Medallion;
+- Modelagem Dimensional;
+- Star Schema;
+- Governança de Dados;
+- RBAC e ACL;
+- Git e GitHub;
+- GitHub Actions;
+- Continuous Integration (CI);
+- Continuous Delivery (CD);
+- DevOps;
+- DataOps;
+- Versionamento;
+- Business Intelligence.
+
+---
+
+# 🔗 Referências Relacionadas
+
+Para aprofundamento dos conceitos apresentados neste glossário, consulte também a documentação da plataforma:
+
+- 📄 [Arquitetura da Solução](./02_arquitetura.md)
+- 📄 [Desenvolvimento do Projeto](./03_desenvolvimento.md)
+- 📄 [Operação da Plataforma](./06_operacao_plataforma.md)
+- 📄 [Governança de Dados](./07_governanca.md)
+- 📄 [DevOps, DataOps e Versionamento](./08_devops_dataops_versionamento.md)
+- 📄 [Runbook de Implantação](./09_runbook_implantacao.md)
+- 📄 [Runbook Operacional](./10_runbook_operacional.md)
+- 📄 [Inventário dos Recursos da Plataforma](./15_inventario.md)
+- 📄 [Artigo Técnico](./17_artigo_tecnico.md)
+
+---
+
+## 📌 Observação
+
+Este glossário complementa a documentação técnica da plataforma e tem como objetivo facilitar a compreensão dos principais conceitos empregados na solução.
+
+Sempre que novos componentes, tecnologias ou serviços forem incorporados ao projeto, recomenda-se atualizar este documento para manter a consistência e a rastreabilidade da documentação.

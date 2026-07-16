@@ -1,4 +1,4 @@
-# 11. Checklist de Implantação
+# 13. Checklist de Implantação
 
 Checklist utilizado para validar a correta implantação da plataforma **Financial Statement Analytics Platform**, cobrindo infraestrutura, segurança, governança, processamento, orquestração e consumo analítico.
 

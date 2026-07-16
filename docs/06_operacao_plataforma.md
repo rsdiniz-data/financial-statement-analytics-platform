@@ -119,6 +119,6 @@ Cada execução realiza:
 
 * ⚙️ [Desenvolvimento do Projeto](./03_desenvolvimento.md)
 * 🔐 [Governança de Dados](./07_governanca.md)
-* 🚀 [Runbook Operacional](./09_runbook_operacional.md)
+* 🚀 [Runbook Operacional](./10_runbook_operacional.md)
 * 🧯 [Troubleshooting](./12_troubleshooting.md)
-* 📘 [Artigo Técnico](./15_artigo_tecnico.md)
+* 📘 [Artigo Técnico](./17_artigo_tecnico.md)

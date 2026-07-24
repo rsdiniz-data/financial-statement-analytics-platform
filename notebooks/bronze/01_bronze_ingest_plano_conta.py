@@ -23,10 +23,10 @@
 # - ../docs/07_governanca.md → Unity Catalog, RBAC e Secrets Management
 #
 # 📄 Runbook de Implantação:
-# - ../docs/08_runbook_implantacao.md → Key Vault, Secrets Scope e Databricks Setup
+# - ../docs/09_runbook_implantacao.md → Key Vault, Secrets Scope e Databricks Setup
 #
 # 📄 Artigo técnico:
-# - ../docs/15_artigo_tecnico.md
+# - ../docs/17_artigo_tecnico.md
 #   3.7 Desenvolvimento dos notebooks em PySpark
 #   3.7.1 Notebook 01 – Ingestão Bronze de PlanoConta
 #
@@ -38,8 +38,8 @@
 #
 # Referência:
 # - docs/03_desenvolvimento.md → Ingestão Bronze (pré-processamento técnico)
-# - docs/08_runbook_implantacao.md → Configuração de ambiente Databricks
-# - docs/15_artigo_tecnico.md → 3.7.1.1 Gerenciamento de dependências
+# - docs/09_runbook_implantacao.md → Configuração de ambiente Databricks
+# - docs/17_artigo_tecnico.md → 3.7.1.1 Gerenciamento de dependências
 #
 # Objetivo técnico:
 # - Garantir suporte a leitura Excel
@@ -67,8 +67,8 @@ from pyspark.sql import functions as F
 #
 # Referência:
 # - docs/07_governanca.md → Gestão de identidades, RBAC e Secret Scopes
-# - docs/08_runbook_implantacao.md → Integração com Azure Key Vault
-# - docs/15_artigo_tecnico.md → 3.7.1.2 Configuração do ambiente
+# - docs/09_runbook_implantacao.md → Integração com Azure Key Vault
+# - docs/17_artigo_tecnico.md → 3.7.1.2 Configuração do ambiente
 #
 # Objetivo de negócio:
 # - Centralizar credenciais no Azure Key Vault
@@ -100,7 +100,7 @@ SOURCE_FILE_NAME = "PlanoContas.xlsx"
 # Referência:
 # - docs/02_arquitetura.md → Separação entre camadas (Storage vs Unity Catalog)
 # - docs/03_desenvolvimento.md → Estrutura da camada Bronze
-# - docs/15_artigo_tecnico.md → 3.7.1.3 Definição de caminhos
+# - docs/17_artigo_tecnico.md → 3.7.1.3 Definição de caminhos
 #
 # Objetivo técnico:
 # - Separar camada física (ADLS) da camada lógica (Unity Catalog)
@@ -137,7 +137,7 @@ log("Iniciando ingestão Bronze - Plano de Contas")
 # Referência:
 # - docs/03_desenvolvimento.md → Transformações técnicas na camada Bronze
 # - docs/02_arquitetura.md → Padronização mínima (Bronze Layer)
-# - docs/15_artigo_tecnico.md → 3.7.1.4 Padronização de colunas
+# - docs/17_artigo_tecnico.md → 3.7.1.4 Padronização de colunas
 #
 # Objetivo de negócio:
 # - Garantir consistência entre fontes de dados
@@ -168,8 +168,8 @@ def normalize_column_name(column_name):
 #
 # Referência:
 # - docs/07_governanca.md → Controle de acesso e autenticação
-# - docs/08_runbook_implantacao.md → App Registration e OAuth2
-# - docs/15_artigo_tecnico.md → 3.7.1.5 Autenticação SharePoint
+# - docs/09_runbook_implantacao.md → App Registration e OAuth2
+# - docs/17_artigo_tecnico.md → 3.7.1.5 Autenticação SharePoint
 #
 # Objetivo de negócio:
 # - Garantir ingestão automatizada da fonte oficial (SharePoint)
@@ -203,7 +203,7 @@ headers = {
 # Referência:
 # - docs/03_desenvolvimento.md → Ingestão de dados externos
 # - docs/02_arquitetura.md → Integração de fontes (SharePoint → Bronze)
-# - docs/15_artigo_tecnico.md → 3.7.1.6 Leitura do arquivo
+# - docs/17_artigo_tecnico.md → 3.7.1.6 Leitura do arquivo
 #
 # Objetivo técnico:
 # - Carregar dados diretamente em memória
@@ -259,7 +259,7 @@ pdf.columns = [normalize_column_name(col) for col in pdf.columns]
 # Referência:
 # - docs/02_arquitetura.md → Uso de Spark na camada Bronze
 # - docs/03_desenvolvimento.md → Processamento distribuído
-# - docs/15_artigo_tecnico.md → 3.7.1.7 Conversão para Spark
+# - docs/17_artigo_tecnico.md → 3.7.1.7 Conversão para Spark
 #
 # Objetivo de negócio:
 # - Habilitar processamento distribuído
@@ -297,7 +297,7 @@ df = (
 # Referência:
 # - docs/02_arquitetura.md → Bronze Layer (Delta Lake)
 # - docs/03_desenvolvimento.md → Persistência em formato Delta
-# - docs/15_artigo_tecnico.md → 3.7.1.9 Persistência na Bronze
+# - docs/17_artigo_tecnico.md → 3.7.1.9 Persistência na Bronze
 #
 # Objetivo de negócio:
 # - Armazenar dados raw estruturados
@@ -338,7 +338,7 @@ spark.sql(f"REFRESH TABLE {FULL_TABLE_NAME}")
 #
 # Referência:
 # - docs/06_operacao_plataforma.md → Validação de cargas
-# - docs/15_artigo_tecnico.md → 3.7.1.10 Validação e encerramento
+# - docs/17_artigo_tecnico.md → 3.7.1.10 Validação e encerramento
 #
 # Objetivo:
 # - Garantir execução bem-sucedida do pipeline

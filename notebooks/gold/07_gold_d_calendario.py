@@ -23,7 +23,7 @@
 #   ../docs/07_governanca.md → Unity Catalog, RBAC e Data Governance
 #
 # 📄 Artigo técnico:
-#   ../docs/15_artigo_tecnico.md
+#   ../docs/17_artigo_tecnico.md
 #   3.7.7 Notebook 07 – Publicação Gold da Dimensão Calendário
 # =========================================================
 
@@ -104,7 +104,7 @@ log("Iniciando publicação Gold - Dimensão Calendário")
 # =========================================================
 #
 # Referência:
-# - docs/15_artigo_tecnico.md → 3.7.7.1 Leitura da tabela fato
+# - docs/17_artigo_tecnico.md → 3.7.7.1 Leitura da tabela fato
 #
 # Objetivo:
 # - Utilizar intervalo temporal real da fato ft_resultado
@@ -135,7 +135,7 @@ if df_ft.limit(1).count() == 0:
 # =========================================================
 #
 # Referência:
-# - docs/15_artigo_tecnico.md → 3.7.7.2 Identificação do intervalo de datas
+# - docs/17_artigo_tecnico.md → 3.7.7.2 Identificação do intervalo de datas
 #
 # Objetivo:
 # - Obter menor e maior data disponível na fato
@@ -164,7 +164,7 @@ if min_date is None or max_date is None:
 # =========================================================
 #
 # Referência:
-# - docs/15_artigo_tecnico.md → 3.7.7.3 Ajuste para anos completos
+# - docs/17_artigo_tecnico.md → 3.7.7.3 Ajuste para anos completos
 #
 # Objetivo:
 # - Garantir cobertura integral dos anos no calendário
@@ -181,7 +181,7 @@ log(f"Calendário gerado de {start_date} até {end_date}")
 # =========================================================
 #
 # Referência:
-# - docs/15_artigo_tecnico.md → 3.7.7.4 Geração da dimensão calendário
+# - docs/17_artigo_tecnico.md → 3.7.7.4 Geração da dimensão calendário
 #
 # Objetivo:
 # - Criar uma linha por dia utilizando sequence() + explode()
@@ -206,7 +206,7 @@ SELECT
 # =========================================================
 #
 # Referência:
-# - docs/15_artigo_tecnico.md → 3.7.7.5 Criação dos atributos temporais
+# - docs/17_artigo_tecnico.md → 3.7.7.5 Criação dos atributos temporais
 #
 # Objetivo:
 # - Disponibilizar atributos analíticos derivados da data
@@ -225,7 +225,7 @@ df_calendar = (
 # =========================================================
 #
 # Referência:
-# - docs/15_artigo_tecnico.md → 3.7.7.6 Inclusão de metadados
+# - docs/17_artigo_tecnico.md → 3.7.7.6 Inclusão de metadados
 #
 # Objetivo:
 # - Registrar timestamp técnico da publicação Gold
@@ -239,7 +239,7 @@ df_calendar = df_calendar.withColumn("_gold_timestamp", F.current_timestamp())
 # =========================================================
 #
 # Referência:
-# - docs/15_artigo_tecnico.md → 3.7.7.7 Persistência Gold
+# - docs/17_artigo_tecnico.md → 3.7.7.7 Persistência Gold
 #
 # Objetivo:
 # - Persistir dimensão em Delta Lake (modo overwrite)
@@ -260,7 +260,7 @@ log("Gravando dados na camada Gold...")
 # =========================================================
 #
 # Referência:
-# - docs/15_artigo_tecnico.md → 3.7.7.8 Publicação no Unity Catalog
+# - docs/17_artigo_tecnico.md → 3.7.7.8 Publicação no Unity Catalog
 #
 # Objetivo:
 # - Registrar tabela governada
@@ -282,7 +282,7 @@ spark.sql(f"REFRESH TABLE {DIM_TABLE}")
 # =========================================================
 #
 # Referência:
-# - docs/15_artigo_tecnico.md → 3.7.7.9 View semântica
+# - docs/17_artigo_tecnico.md → 3.7.7.9 View semântica
 #
 # Objetivo:
 # - Disponibilizar camada amigável para BI
@@ -307,7 +307,7 @@ ORDER BY Data
 # =========================================================
 #
 # Referência:
-# - docs/15_artigo_tecnico.md → 3.7.7.10 Finalização
+# - docs/17_artigo_tecnico.md → 3.7.7.10 Finalização
 #
 # Objetivo:
 # - Validar execução e registrar indicadores
@@ -322,7 +322,7 @@ log(f"Registros processados: {record_count}")
 # =========================================================
 #
 # Referência:
-# - docs/15_artigo_tecnico.md → 3.7.7.10 Finalização
+# - docs/17_artigo_tecnico.md → 3.7.7.10 Finalização
 
 log("Dimensão Calendário publicada com sucesso")
 

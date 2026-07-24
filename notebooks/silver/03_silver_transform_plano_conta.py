@@ -24,10 +24,10 @@
 # - ../docs/07_governanca.md → Unity Catalog, RBAC e Data Lineage
 #
 # 📄 Runbook de Implantação:
-# - ../docs/08_runbook_implantacao.md → Configuração do ambiente Databricks
+# - ../docs/09_runbook_implantacao.md → Configuração do ambiente Databricks
 #
 # 📄 Artigo técnico:
-# - ../docs/15_artigo_tecnico.md
+# - ../docs/17_artigo_tecnico.md
 #   3.7 Desenvolvimento dos notebooks em PySpark
 #   3.7.3 Notebook 03 – Transformação Silver de Plano de Contas
 #
@@ -40,7 +40,7 @@
 #
 # Referência:
 # - docs/03_desenvolvimento.md → Transformações da camada Silver
-# - docs/15_artigo_tecnico.md → 3.7.3.1 Configuração do ambiente
+# - docs/17_artigo_tecnico.md → 3.7.3.1 Configuração do ambiente
 #
 # Objetivo técnico:
 # - Disponibilizar bibliotecas para processamento distribuído
@@ -58,8 +58,8 @@ from pyspark.sql.window import Window
 #
 # Referência:
 # - docs/07_governanca.md → Gestão de identidades, RBAC e Secret Scopes
-# - docs/08_runbook_implantacao.md → Integração com Azure Key Vault
-# - docs/15_artigo_tecnico.md → 3.7.3.1 Configuração do ambiente
+# - docs/09_runbook_implantacao.md → Integração com Azure Key Vault
+# - docs/17_artigo_tecnico.md → 3.7.3.1 Configuração do ambiente
 #
 # Objetivo de negócio:
 # - Centralizar configurações da plataforma
@@ -105,7 +105,7 @@ TABLE_NAME = "plano_conta"
 # Referência:
 # - docs/02_arquitetura.md → Separação entre camadas (Storage vs Unity Catalog)
 # - docs/03_desenvolvimento.md → Estrutura da camada Silver
-# - docs/15_artigo_tecnico.md → 3.7.3.2 Definição dos caminhos de armazenamento
+# - docs/17_artigo_tecnico.md → 3.7.3.2 Definição dos caminhos de armazenamento
 #
 # Objetivo técnico:
 # - Separar camadas física e lógica da arquitetura
@@ -157,7 +157,7 @@ log("Iniciando transformação Silver - Plano de Contas")
 # Referência:
 # - docs/03_desenvolvimento.md → Consumo da camada Bronze
 # - docs/02_arquitetura.md → Camada Silver (Trusted Data)
-# - docs/15_artigo_tecnico.md → 3.7.3.3 Leitura da camada Bronze
+# - docs/17_artigo_tecnico.md → 3.7.3.3 Leitura da camada Bronze
 #
 # Objetivo de negócio:
 # - Consumir dados previamente ingeridos
@@ -177,7 +177,7 @@ df_origem = spark.table(BRONZE_TABLE)
 #
 # Referência:
 # - docs/03_desenvolvimento.md → Transformações da camada Silver
-# - docs/15_artigo_tecnico.md → 3.7.3.4 Preparação da estrutura de processamento
+# - docs/17_artigo_tecnico.md → 3.7.3.4 Preparação da estrutura de processamento
 #
 # Objetivo técnico:
 # - Garantir determinismo durante o processamento
@@ -198,7 +198,7 @@ df = df_origem
 #
 # Referência:
 # - docs/03_desenvolvimento.md → Processamento distribuído
-# - docs/15_artigo_tecnico.md → 3.7.3.5 Criação das janelas analíticas
+# - docs/17_artigo_tecnico.md → 3.7.3.5 Criação das janelas analíticas
 #
 # Objetivo técnico:
 # - Criar Window Functions para processamento hierárquico
@@ -229,7 +229,7 @@ janela_filldown = (
 #
 # Referência:
 # - docs/03_desenvolvimento.md → Regras de transformação
-# - docs/15_artigo_tecnico.md → 3.7.3.6 Identificação da hierarquia contábil
+# - docs/17_artigo_tecnico.md → 3.7.3.6 Identificação da hierarquia contábil
 #
 # Objetivo de negócio:
 # - Identificar automaticamente o nível hierárquico
@@ -255,7 +255,7 @@ df = df.withColumn(
 #
 # Referência:
 # - docs/03_desenvolvimento.md → Transformações da camada Silver
-# - docs/15_artigo_tecnico.md → 3.7.3.7 Construção da hierarquia contábil
+# - docs/17_artigo_tecnico.md → 3.7.3.7 Construção da hierarquia contábil
 #
 # Objetivo de negócio:
 # - Organizar o plano de contas em níveis hierárquicos
@@ -303,7 +303,7 @@ df = df.withColumn(
 #
 # Referência:
 # - docs/03_desenvolvimento.md → Transformações hierárquicas
-# - docs/15_artigo_tecnico.md → 3.7.3.8 Aplicação do preenchimento hierárquico (FillDown)
+# - docs/17_artigo_tecnico.md → 3.7.3.8 Aplicação do preenchimento hierárquico (FillDown)
 #
 # Objetivo de negócio:
 # - Propagar os níveis superiores da hierarquia
@@ -346,7 +346,7 @@ df = df.withColumn(
 #
 # Referência:
 # - docs/03_desenvolvimento.md → Regras de negócio da camada Silver
-# - docs/15_artigo_tecnico.md → 3.7.3.9 Criação do código da DRE
+# - docs/17_artigo_tecnico.md → 3.7.3.9 Criação do código da DRE
 #
 # Objetivo de negócio:
 # - Identificar o agrupamento principal da DRE
@@ -377,7 +377,7 @@ df = df.withColumn(
 #
 # Referência:
 # - docs/03_desenvolvimento.md → Padronização da camada Silver
-# - docs/15_artigo_tecnico.md → 3.7.3.10 Padronização dos tipos de dados
+# - docs/17_artigo_tecnico.md → 3.7.3.10 Padronização dos tipos de dados
 #
 # Objetivo de negócio:
 # - Garantir consistência do esquema da camada Silver
@@ -405,7 +405,7 @@ df = (
 #
 # Referência:
 # - docs/03_desenvolvimento.md → Regras de negócio da camada Silver
-# - docs/15_artigo_tecnico.md → 3.7.3.11 Classificação financeira
+# - docs/17_artigo_tecnico.md → 3.7.3.11 Classificação financeira
 #
 # Objetivo de negócio:
 # - Padronizar o tratamento dos sinais financeiros
@@ -434,7 +434,7 @@ df = df.withColumn(
 # Referência:
 # - docs/07_governanca.md → Data Lineage e auditoria
 # - docs/05_entrega_valor.md → Rastreabilidade dos dados
-# - docs/15_artigo_tecnico.md → 3.7.3.12 Inclusão de metadados de governança
+# - docs/17_artigo_tecnico.md → 3.7.3.12 Inclusão de metadados de governança
 #
 # Objetivo de negócio:
 # - Garantir rastreabilidade das transformações
@@ -457,7 +457,7 @@ df = (
 #
 # Referência:
 # - docs/03_desenvolvimento.md → Transformações da camada Silver
-# - docs/15_artigo_tecnico.md → 3.7.3.13 Limpeza da estrutura temporária
+# - docs/17_artigo_tecnico.md → 3.7.3.13 Limpeza da estrutura temporária
 #
 # Objetivo técnico:
 # - Remover colunas auxiliares utilizadas no processamento
@@ -478,7 +478,7 @@ df_final = df.drop(
 # Referência:
 # - docs/02_arquitetura.md → Silver Layer (Trusted Data)
 # - docs/03_desenvolvimento.md → Persistência em formato Delta
-# - docs/15_artigo_tecnico.md → 3.7.3.14 Persistência na camada Silver
+# - docs/17_artigo_tecnico.md → 3.7.3.14 Persistência na camada Silver
 #
 # Objetivo de negócio:
 # - Disponibilizar dados tratados na camada Trusted
@@ -499,7 +499,7 @@ df_final.write.format("delta") \
 #
 # Referência:
 # - docs/07_governanca.md → Unity Catalog e governança centralizada
-# - docs/15_artigo_tecnico.md → 3.7.3.14 Persistência na camada Silver
+# - docs/17_artigo_tecnico.md → 3.7.3.14 Persistência na camada Silver
 #
 # Objetivo:
 # - Registrar tabela governada
@@ -526,7 +526,7 @@ spark.sql(
 #
 # Referência:
 # - docs/06_operacao_plataforma.md → Validação de cargas
-# - docs/15_artigo_tecnico.md → 3.7.3.15 Validação e encerramento da execução
+# - docs/17_artigo_tecnico.md → 3.7.3.15 Validação e encerramento da execução
 #
 # Objetivo:
 # - Garantir execução bem-sucedida do pipeline
@@ -544,7 +544,7 @@ log(f"Registros processados: {record_count}")
 #
 # Referência:
 # - docs/06_operacao_plataforma.md → Encerramento operacional
-# - docs/15_artigo_tecnico.md → 3.7.3.15 Validação e encerramento da execução
+# - docs/17_artigo_tecnico.md → 3.7.3.15 Validação e encerramento da execução
 #
 # =========================================================
 

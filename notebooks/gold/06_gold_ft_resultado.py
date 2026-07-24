@@ -24,7 +24,7 @@
 #   ../docs/07_governanca.md → Unity Catalog, RBAC e Data Governance
 #
 # 📄 Artigo técnico:
-#   ../docs/15_artigo_tecnico.md
+#   ../docs/17_artigo_tecnico.md
 #   3.7.6 Notebook 06 – Publicação Gold da Tabela Fato de Resultado
 # =========================================================
 
@@ -34,7 +34,7 @@
 # =========================================================
 #
 # Referência:
-# - docs/15_artigo_tecnico.md → 3.7.6.1 Configuração do ambiente
+# - docs/17_artigo_tecnico.md → 3.7.6.1 Configuração do ambiente
 # - docs/03_desenvolvimento.md → Transformações Gold
 #
 # Objetivo técnico:
@@ -117,7 +117,7 @@ log("Iniciando publicação Gold - Fato Resultado")
 #
 # Referência:
 # - docs/03_desenvolvimento.md → Consumo da camada Silver
-# - docs/15_artigo_tecnico.md → 3.7.6.1 Leitura das tabelas Silver
+# - docs/17_artigo_tecnico.md → 3.7.6.1 Leitura das tabelas Silver
 #
 # Objetivo:
 # - Consumir dados tratados e governados
@@ -134,7 +134,7 @@ df_plano     = spark.table(PLANO_CONTA_TABLE)
 # =========================================================
 #
 # Referência:
-# - docs/15_artigo_tecnico.md → 3.7.6.2 Identificação dinâmica dos períodos
+# - docs/17_artigo_tecnico.md → 3.7.6.2 Identificação dinâmica dos períodos
 #
 # Objetivo:
 # - Selecionar automaticamente os 3 períodos mais recentes
@@ -157,7 +157,7 @@ df_resultado = (
 # =========================================================
 #
 # Referência:
-# - docs/15_artigo_tecnico.md → 3.7.6.3 Integração com Plano de Contas
+# - docs/17_artigo_tecnico.md → 3.7.6.3 Integração com Plano de Contas
 #
 # Objetivo:
 # - Enriquecer dados financeiros com atributos contábeis
@@ -180,7 +180,7 @@ df_join = (
 # =========================================================
 #
 # Referência:
-# - docs/15_artigo_tecnico.md → 3.7.6.4 Filtragem das contas analíticas
+# - docs/17_artigo_tecnico.md → 3.7.6.4 Filtragem das contas analíticas
 #
 # Objetivo:
 # - Manter apenas contas lançáveis (lancamento = 1)
@@ -196,7 +196,7 @@ df_fact = df_join.filter(F.col("lancamento") == 1)
 # =========================================================
 #
 # Referência:
-# - docs/15_artigo_tecnico.md → 3.7.6.5 Modelagem da tabela fato
+# - docs/17_artigo_tecnico.md → 3.7.6.5 Modelagem da tabela fato
 #
 # Objetivo:
 # - Estruturar fato enxuta e otimizada para BI
@@ -220,7 +220,7 @@ df_fact = (
 # =========================================================
 #
 # Referência:
-# - docs/15_artigo_tecnico.md → 3.7.6.6 Controle de qualidade e metadados
+# - docs/17_artigo_tecnico.md → 3.7.6.6 Controle de qualidade e metadados
 #
 # Objetivo:
 # - Remover duplicidades
@@ -237,7 +237,7 @@ df_fact = df_fact.withColumn("_gold_timestamp", F.current_timestamp())
 # =========================================================
 #
 # Referência:
-# - docs/15_artigo_tecnico.md → 3.7.6.7 Persistência Gold
+# - docs/17_artigo_tecnico.md → 3.7.6.7 Persistência Gold
 #
 # Objetivo:
 # - Persistir tabela fato em Delta Lake
@@ -260,7 +260,7 @@ log("Gravando dados na camada Gold...")
 # =========================================================
 #
 # Referência:
-# - docs/15_artigo_tecnico.md → 3.7.6.8 Publicação no Unity Catalog
+# - docs/17_artigo_tecnico.md → 3.7.6.8 Publicação no Unity Catalog
 #
 # Objetivo:
 # - Registrar tabela governada
@@ -282,7 +282,7 @@ spark.sql(f"REFRESH TABLE {GOLD_TABLE}")
 # =========================================================
 #
 # Referência:
-# - docs/15_artigo_tecnico.md → 3.7.6.9 View semântica
+# - docs/17_artigo_tecnico.md → 3.7.6.9 View semântica
 #
 # Objetivo:
 # - Disponibilizar camada amigável para BI
@@ -306,7 +306,7 @@ ORDER BY Data, ID Conta
 # =========================================================
 #
 # Referência:
-# - docs/15_artigo_tecnico.md → 3.7.6.10 Finalização
+# - docs/17_artigo_tecnico.md → 3.7.6.10 Finalização
 #
 # Objetivo:
 # - Validar execução e registrar indicadores
@@ -321,7 +321,7 @@ log(f"Registros processados: {record_count}")
 # =========================================================
 #
 # Referência:
-# - docs/15_artigo_tecnico.md → 3.7.6.10 Finalização
+# - docs/17_artigo_tecnico.md → 3.7.6.10 Finalização
 
 log("Publicação Gold concluída com sucesso")
 

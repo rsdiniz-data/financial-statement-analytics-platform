@@ -54,7 +54,7 @@
 #   Auditoria e administração da plataforma
 #
 # 📄 Artigo técnico:
-# - ../docs/15_artigo_tecnico.md
+# - ../docs/17_artigo_tecnico.md
 #   3.7 Desenvolvimento dos notebooks em PySpark
 #   3.7.8 Notebook 98 – Governança, RBAC e ACL
 #
@@ -68,7 +68,7 @@
 # Referência:
 # - docs/07_governanca.md → Objetos governados
 # - docs/02_arquitetura.md → Unity Catalog
-# - docs/15_artigo_tecnico.md
+# - docs/17_artigo_tecnico.md
 #   → 3.7.8.1 Gerenciamento de dependências
 #
 # Objetivo técnico:
@@ -144,7 +144,7 @@ log("Iniciando demonstração de governança")
 # - docs/07_governanca.md
 #   → Controle de acesso (RBAC e ACL)
 #
-# - docs/15_artigo_tecnico.md
+# - docs/17_artigo_tecnico.md
 #   → 3.7.8.2 Princípio do menor privilégio
 #
 # Objetivo técnico:
@@ -186,7 +186,7 @@ log("Aplicando princípio do menor privilégio")
 # - docs/07_governanca.md
 #   → Gerenciamento de identidades
 #
-# - docs/15_artigo_tecnico.md
+# - docs/17_artigo_tecnico.md
 #   → 3.7.8.3 Evidências da estrutura RBAC
 #
 # Objetivo técnico:
@@ -226,7 +226,7 @@ display(
 # - docs/07_governanca.md
 #   → Controle de acesso ao Unity Catalog
 #
-# - docs/15_artigo_tecnico.md
+# - docs/17_artigo_tecnico.md
 #   → 3.7.8.4 Concessão de acesso ao catálogo
 #
 # Objetivo técnico:
@@ -266,7 +266,7 @@ TO `business_users`
 # - docs/07_governanca.md
 #   → Controle de acesso (RBAC e ACL)
 #
-# - docs/15_artigo_tecnico.md
+# - docs/17_artigo_tecnico.md
 #   → 3.7.8.4 Concessão de acesso ao catálogo e aos schemas
 #
 # Objetivo técnico:
@@ -302,7 +302,7 @@ TO `business_users`
 # - docs/07_governanca.md
 #   → Controle de acesso (RBAC e ACL)
 #
-# - docs/15_artigo_tecnico.md
+# - docs/17_artigo_tecnico.md
 #   → 3.7.8.5 Aplicação das ACLs
 #
 # Objetivo técnico:
@@ -354,7 +354,7 @@ TO `data_engineers`
 # - docs/07_governanca.md
 #   → Controle de acesso às tabelas analíticas
 #
-# - docs/15_artigo_tecnico.md
+# - docs/17_artigo_tecnico.md
 #   → 3.7.8.5 Aplicação das ACLs
 #
 # Objetivo técnico:
@@ -406,7 +406,7 @@ TO `bi_analysts`
 # - docs/07_governanca.md
 #   → Controle de acesso às Views Semânticas
 #
-# - docs/15_artigo_tecnico.md
+# - docs/17_artigo_tecnico.md
 #   → 3.7.8.5 Aplicação das ACLs
 #
 # Objetivo técnico:
@@ -461,7 +461,7 @@ TO `business_users`
 # - docs/06_operacao_plataforma.md
 #   → Monitoramento operacional
 #
-# - docs/15_artigo_tecnico.md
+# - docs/17_artigo_tecnico.md
 #   → 3.7.8.6 Evidências de auditoria
 #
 # Objetivo técnico:
@@ -534,7 +534,7 @@ display(
 # - docs/07_governanca.md
 #   → Auditoria das tabelas publicadas
 #
-# - docs/15_artigo_tecnico.md
+# - docs/17_artigo_tecnico.md
 #   → 3.7.8.6 Evidências de auditoria
 #
 # Objetivo técnico:
@@ -593,7 +593,7 @@ display(
 # - docs/07_governanca.md
 #   → Governança das Views Semânticas
 #
-# - docs/15_artigo_tecnico.md
+# - docs/17_artigo_tecnico.md
 #   → 3.7.8.6 Evidências de auditoria
 #
 # Objetivo técnico:
@@ -652,7 +652,7 @@ display(
 # Referência:
 # - docs/07_governanca.md → Modelo de Governança
 # - docs/06_operacao_plataforma.md → Encerramento operacional
-# - docs/15_artigo_tecnico.md → 3.7.8.7 Evidências da governança aplicada
+# - docs/17_artigo_tecnico.md → 3.7.8.7 Evidências da governança aplicada
 #
 # Objetivo de negócio:
 # - Confirmar a aplicação da política de governança

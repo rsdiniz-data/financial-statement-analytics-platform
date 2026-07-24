@@ -24,10 +24,10 @@
 # - ../docs/07_governanca.md → Unity Catalog, RBAC e Governança de Dados
 #
 # 📄 Runbook de Implantação:
-# - ../docs/08_runbook_implantacao.md → Configuração do Azure Databricks
+# - ../docs/09_runbook_implantacao.md → Configuração do Azure Databricks
 #
 # 📄 Artigo técnico:
-# - ../docs/15_artigo_tecnico.md
+# - ../docs/17_artigo_tecnico.md
 #   3.7 Desenvolvimento dos notebooks em PySpark
 #   3.7.4 Notebook 04 – Transformação Silver de Resultado
 #
@@ -47,7 +47,7 @@ from pyspark.sql import functions as F
 #
 # Referência:
 # - docs/07_governanca.md → Gestão de identidades, RBAC e Secret Scopes
-# - docs/08_runbook_implantacao.md → Integração com Azure Key Vault
+# - docs/09_runbook_implantacao.md → Integração com Azure Key Vault
 #
 # Objetivo de negócio:
 # - Centralizar parâmetros do ambiente
@@ -147,7 +147,7 @@ log("Iniciando transformação Silver - Resultado")
 # Referência:
 # - docs/02_arquitetura.md → Camada Bronze (Raw Data)
 # - docs/03_desenvolvimento.md → Transformação Silver
-# - docs/15_artigo_tecnico.md → 3.7.4.1 Leitura da camada Bronze
+# - docs/17_artigo_tecnico.md → 3.7.4.1 Leitura da camada Bronze
 #
 # Objetivo de negócio:
 # - Consumir dados previamente ingeridos
@@ -167,7 +167,7 @@ df_origem = spark.table(BRONZE_TABLE)
 #
 # Referência:
 # - docs/03_desenvolvimento.md → Transformações Silver
-# - docs/15_artigo_tecnico.md → 3.7.4.2 Limpeza e padronização inicial
+# - docs/17_artigo_tecnico.md → 3.7.4.2 Limpeza e padronização inicial
 #
 # Objetivo de negócio:
 # - Garantir consistência estrutural
@@ -210,7 +210,7 @@ df_limpo = df_limpo.dropDuplicates()
 #
 # Referência:
 # - docs/03_desenvolvimento.md → Transformação Silver
-# - docs/15_artigo_tecnico.md → 3.7.4.3 Identificação dinâmica das colunas de exercício
+# - docs/17_artigo_tecnico.md → 3.7.4.3 Identificação dinâmica das colunas de exercício
 #
 # Objetivo de negócio:
 # - Identificar automaticamente novos exercícios financeiros
@@ -249,7 +249,7 @@ for column in period_columns:
 # Referência:
 # - docs/02_arquitetura.md → Camada Silver (Trusted Data)
 # - docs/03_desenvolvimento.md → Transformações analíticas
-# - docs/15_artigo_tecnico.md → 3.7.4.4 Transformação estrutural (Wide → Long)
+# - docs/17_artigo_tecnico.md → 3.7.4.4 Transformação estrutural (Wide → Long)
 #
 # Objetivo de negócio:
 # - Converter colunas de exercícios em registros
@@ -280,7 +280,7 @@ df_unpivot = (
 #
 # Referência:
 # - docs/03_desenvolvimento.md → Transformações Silver
-# - docs/15_artigo_tecnico.md → 3.7.4.5 Criação da data de referência
+# - docs/17_artigo_tecnico.md → 3.7.4.5 Criação da data de referência
 #
 # Objetivo de negócio:
 # - Padronizar representação temporal
@@ -324,7 +324,7 @@ df_unpivot = (
 #
 # Referência:
 # - docs/03_desenvolvimento.md → Padronização de dados financeiros
-# - docs/15_artigo_tecnico.md → 3.7.4.6 Tratamento dos valores financeiros
+# - docs/17_artigo_tecnico.md → 3.7.4.6 Tratamento dos valores financeiros
 #
 # Objetivo de negócio:
 # - Padronizar formato monetário
@@ -391,7 +391,7 @@ df_tratado = (
 # Referência:
 # - docs/03_desenvolvimento.md → Transformações Silver
 # - docs/02_arquitetura.md → Camada Silver (Trusted Data)
-# - docs/15_artigo_tecnico.md → 3.7.4.7 Conversão de tipos e criação de atributos temporais
+# - docs/17_artigo_tecnico.md → 3.7.4.7 Conversão de tipos e criação de atributos temporais
 #
 # Objetivo de negócio:
 # - Garantir consistência do modelo analítico
@@ -438,7 +438,7 @@ df_resultado = (
 # Referência:
 # - docs/03_desenvolvimento.md → Qualidade de dados
 # - docs/06_operacao_plataforma.md → Validação de cargas
-# - docs/15_artigo_tecnico.md → 3.7.4.8 Controle de qualidade dos dados
+# - docs/17_artigo_tecnico.md → 3.7.4.8 Controle de qualidade dos dados
 #
 # Objetivo de negócio:
 # - Garantir consistência da camada Silver
@@ -463,7 +463,7 @@ df_resultado = df_resultado.dropDuplicates()
 # Referência:
 # - docs/07_governanca.md → Data Lineage e auditoria
 # - docs/05_entrega_valor.md → Rastreabilidade dos dados
-# - docs/15_artigo_tecnico.md → 3.7.4.9 Inclusão de metadados de governança
+# - docs/17_artigo_tecnico.md → 3.7.4.9 Inclusão de metadados de governança
 #
 # Objetivo de negócio:
 # - Registrar o momento da transformação
@@ -488,7 +488,7 @@ df_resultado = (
 # Referência:
 # - docs/02_arquitetura.md → Camada Silver (Trusted Data)
 # - docs/03_desenvolvimento.md → Persistência em formato Delta
-# - docs/15_artigo_tecnico.md → 3.7.4.10 Persistência da camada Silver
+# - docs/17_artigo_tecnico.md → 3.7.4.10 Persistência da camada Silver
 #
 # Objetivo de negócio:
 # - Persistir dados tratados em formato Delta Lake
@@ -513,7 +513,7 @@ log("Gravando dados na camada Silver")
 #
 # Referência:
 # - docs/07_governanca.md → Unity Catalog e governança centralizada
-# - docs/15_artigo_tecnico.md → 3.7.4.10 Persistência da camada Silver
+# - docs/17_artigo_tecnico.md → 3.7.4.10 Persistência da camada Silver
 #
 # Objetivo de negócio:
 # - Registrar tabela governada no Unity Catalog
@@ -541,7 +541,7 @@ spark.sql(
 #
 # Referência:
 # - docs/06_operacao_plataforma.md → Validação de cargas
-# - docs/15_artigo_tecnico.md → 3.7.4.11 Finalização do processo
+# - docs/17_artigo_tecnico.md → 3.7.4.11 Finalização do processo
 #
 # Objetivo de negócio:
 # - Validar a persistência dos dados
@@ -561,7 +561,7 @@ log(f"Registros processados: {record_count}")
 #
 # Referência:
 # - docs/06_operacao_plataforma.md → Encerramento operacional
-# - docs/15_artigo_tecnico.md → 3.7.4.11 Finalização do processo
+# - docs/17_artigo_tecnico.md → 3.7.4.11 Finalização do processo
 #
 # Objetivo:
 # - Registrar o encerramento da execução

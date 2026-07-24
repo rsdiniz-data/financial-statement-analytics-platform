@@ -29,7 +29,7 @@
 # - ../docs/06_operacao_plataforma.md → Monitoramento e Publicação das Camadas
 #
 # 📄 Artigo técnico:
-# - ../docs/15_artigo_tecnico.md
+# - ../docs/17_artigo_tecnico.md
 #   3.7 Desenvolvimento dos notebooks em PySpark
 #   3.7.5 Notebook 05 – Publicação Gold da Dimensão Plano de Contas
 #
@@ -150,7 +150,7 @@ log("Iniciando publicação Gold - Dimensão Plano de Contas")
 # Referência:
 # - docs/03_desenvolvimento.md → Camada Silver (dados tratados)
 # - docs/02_arquitetura.md → Fluxo Silver → Gold
-# - docs/15_artigo_tecnico.md → 3.7.5.1 Consumo da camada Silver
+# - docs/17_artigo_tecnico.md → 3.7.5.1 Consumo da camada Silver
 #
 # Objetivo de negócio:
 # - Consumir dados já tratados e validados
@@ -171,7 +171,7 @@ df_silver = spark.table(SILVER_TABLE)
 # Referência:
 # - docs/03_desenvolvimento.md → Modelagem dimensional
 # - docs/02_arquitetura.md → Camada Gold (Business Layer)
-# - docs/15_artigo_tecnico.md → 3.7.5.2 Modelagem da dimensão
+# - docs/17_artigo_tecnico.md → 3.7.5.2 Modelagem da dimensão
 #
 # Objetivo de negócio:
 # - Estruturar dimensão contábil corporativa
@@ -208,7 +208,7 @@ df_gold = (
 # Referência:
 # - docs/06_operacao_plataforma.md → Qualidade de dados
 # - docs/03_desenvolvimento.md → Regras de consistência
-# - docs/15_artigo_tecnico.md → 3.7.5.3 Controle de qualidade
+# - docs/17_artigo_tecnico.md → 3.7.5.3 Controle de qualidade
 #
 # Objetivo de negócio:
 # - Garantir unicidade da dimensão
@@ -229,7 +229,7 @@ df_gold = df_gold.dropDuplicates(["id_conta"])
 # Referência:
 # - docs/07_governanca.md → Data lineage e auditoria
 # - docs/05_entrega_valor.md → Rastreabilidade
-# - docs/15_artigo_tecnico.md → 3.7.5.2 Metadados de governança
+# - docs/17_artigo_tecnico.md → 3.7.5.2 Metadados de governança
 #
 # Objetivo de negócio:
 # - Registrar momento da publicação na camada Gold
@@ -249,7 +249,7 @@ df_gold = df_gold.withColumn(
 # Referência:
 # - docs/02_arquitetura.md → Camada Gold (Business Data)
 # - docs/03_desenvolvimento.md → Persistência em Delta Lake
-# - docs/15_artigo_tecnico.md → 3.7.5.4 Persistência na Gold
+# - docs/17_artigo_tecnico.md → 3.7.5.4 Persistência na Gold
 #
 # Objetivo de negócio:
 # - Persistir dimensão contábil corporativa
@@ -274,7 +274,7 @@ log("Gravando dados na camada Gold...")
 #
 # Referência:
 # - docs/07_governanca.md → Unity Catalog e governança centralizada
-# - docs/15_artigo_tecnico.md → 3.7.5.4 Registro no catálogo
+# - docs/17_artigo_tecnico.md → 3.7.5.4 Registro no catálogo
 #
 # Objetivo de negócio:
 # - Tornar a tabela governada e rastreável
@@ -302,7 +302,7 @@ REFRESH TABLE {GOLD_TABLE}
 # Referência:
 # - docs/02_arquitetura.md → Camada semântica para BI
 # - docs/03_desenvolvimento.md → Camada de consumo analítico
-# - docs/15_artigo_tecnico.md → 3.7.5.5 View semântica
+# - docs/17_artigo_tecnico.md → 3.7.5.5 View semântica
 #
 # Objetivo de negócio:
 # - Simplificar o consumo por ferramentas de BI
@@ -337,7 +337,7 @@ FROM {GOLD_TABLE}
 #
 # Referência:
 # - docs/06_operacao_plataforma.md → Validação de cargas
-# - docs/15_artigo_tecnico.md → 3.7.5.6 Validação final
+# - docs/17_artigo_tecnico.md → 3.7.5.6 Validação final
 #
 # Objetivo de negócio:
 # - Garantir integridade da publicação
@@ -356,7 +356,7 @@ log(f"Quantidade de registros: {record_count}")
 #
 # Referência:
 # - docs/06_operacao_plataforma.md → Encerramento operacional
-# - docs/15_artigo_tecnico.md → 3.7.5.6 Finalização do processo
+# - docs/17_artigo_tecnico.md → 3.7.5.6 Finalização do processo
 #
 # Objetivo de negócio:
 # - Encerrar execução com rastreabilidade completa

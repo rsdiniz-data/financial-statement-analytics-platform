@@ -51,7 +51,7 @@
 #   Monitoramento e recuperação operacional
 #
 # 📄 Artigo técnico:
-# - ../docs/15_artigo_tecnico.md
+# - ../docs/17_artigo_tecnico.md
 #   3.7 Desenvolvimento dos notebooks em PySpark
 #   3.7.9 Notebook 99 – Demonstração dos recursos ACID do Delta Lake
 #
@@ -69,7 +69,7 @@
 # - docs/02_arquitetura.md
 #   → Camada Gold e Delta Lake
 #
-# - docs/15_artigo_tecnico.md
+# - docs/17_artigo_tecnico.md
 #   → 3.7.9.1 Configuração do ambiente
 #
 # Objetivo técnico:
@@ -128,7 +128,7 @@ log("Iniciando demonstração dos recursos ACID do Delta Lake")
 # - docs/07_governanca.md
 #   → Garantias transacionais do Delta Lake
 #
-# - docs/15_artigo_tecnico.md
+# - docs/17_artigo_tecnico.md
 #   → 3.7.9.2 Preparação do ambiente de demonstração
 #
 # Objetivo técnico:
@@ -172,7 +172,7 @@ log("Tabela de demonstração criada com sucesso")
 # - docs/07_governanca.md
 #   → Histórico de versões (Table History)
 #
-# - docs/15_artigo_tecnico.md
+# - docs/17_artigo_tecnico.md
 #   → 3.7.9.3 Histórico de transações
 #
 # Objetivo técnico:
@@ -227,7 +227,7 @@ print(f"Registros atuais: {current_count}")
 # - docs/07_governanca.md
 #   → Garantias transacionais do Delta Lake (ACID)
 #
-# - docs/15_artigo_tecnico.md
+# - docs/17_artigo_tecnico.md
 #   → 3.7.9.4 Simulação de transação ACID
 #
 # Objetivo técnico:
@@ -284,7 +284,7 @@ print(f"Registros após overwrite: {updated_count}")
 # - docs/07_governanca.md
 #   → Histórico de versões (Table History)
 #
-# - docs/15_artigo_tecnico.md
+# - docs/17_artigo_tecnico.md
 #   → 3.7.9.4 Simulação de transação ACID
 #
 # Objetivo técnico:
@@ -323,7 +323,7 @@ display(
 # - docs/07_governanca.md
 #   → Time Travel
 #
-# - docs/15_artigo_tecnico.md
+# - docs/17_artigo_tecnico.md
 #   → 3.7.9.5 Consulta histórica (Time Travel)
 #
 # Objetivo técnico:
@@ -362,7 +362,7 @@ display(
 # - docs/07_governanca.md
 #   → Restore Table
 #
-# - docs/15_artigo_tecnico.md
+# - docs/17_artigo_tecnico.md
 #   → 3.7.9.6 Restauração de versões
 #
 # Objetivo técnico:
@@ -419,7 +419,7 @@ print(f"Registros após restore: {restored_count}")
 # - docs/06_operacao_plataforma.md
 #   → Monitoramento operacional
 #
-# - docs/15_artigo_tecnico.md
+# - docs/17_artigo_tecnico.md
 #   → 3.7.9.7 Evidências das funcionalidades do Delta Lake
 #
 # Objetivo técnico:
@@ -450,7 +450,7 @@ display(
 # - docs/07_governanca.md
 #   → Garantias transacionais do Delta Lake
 #
-# - docs/15_artigo_tecnico.md
+# - docs/17_artigo_tecnico.md
 #   → 3.7.9.7 Evidências das funcionalidades do Delta Lake
 #
 # Objetivo técnico:
@@ -501,7 +501,7 @@ print("-" * 60)
 # - docs/06_operacao_plataforma.md
 #   → Administração e limpeza do ambiente
 #
-# - docs/15_artigo_tecnico.md
+# - docs/17_artigo_tecnico.md
 #   → 3.7.9.8 Limpeza e encerramento
 #
 # Objetivo técnico:
@@ -532,7 +532,7 @@ DROP TABLE IF EXISTS {DEMO_TABLE}
 # - docs/06_operacao_plataforma.md
 #   → Encerramento operacional
 #
-# - docs/15_artigo_tecnico.md
+# - docs/17_artigo_tecnico.md
 #   → 3.7.9.8 Limpeza e encerramento
 #
 # Objetivo de negócio:

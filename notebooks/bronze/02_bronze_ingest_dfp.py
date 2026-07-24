@@ -23,10 +23,10 @@
 # - ../docs/07_governanca.md → Unity Catalog, RBAC e Secrets Management
 #
 # 📄 Runbook de Implantação:
-# - ../docs/08_runbook_implantacao.md → Key Vault, Secrets Scope e Databricks Setup
+# - ../docs/09_runbook_implantacao.md → Key Vault, Secrets Scope e Databricks Setup
 #
 # 📄 Artigo técnico:
-# - ../docs/15_artigo_tecnico.md
+# - ../docs/17_artigo_tecnico.md
 #   3.7 Desenvolvimento dos notebooks em PySpark
 #   3.7.2 Notebook 02 – Ingestão Bronze de DFP
 #
@@ -39,8 +39,8 @@
 #
 # Referência:
 # - docs/03_desenvolvimento.md → Ingestão Bronze (pré-processamento técnico)
-# - docs/08_runbook_implantacao.md → Configuração de ambiente Databricks
-# - docs/15_artigo_tecnico.md → 3.7.2.1 Gerenciamento de dependências
+# - docs/09_runbook_implantacao.md → Configuração de ambiente Databricks
+# - docs/17_artigo_tecnico.md → 3.7.2.1 Gerenciamento de dependências
 #
 # Objetivo técnico:
 # - Garantir suporte à leitura de arquivos Excel
@@ -71,8 +71,8 @@ from pyspark.sql import functions as F
 #
 # Referência:
 # - docs/07_governanca.md → Gestão de identidades, RBAC e Secret Scopes
-# - docs/08_runbook_implantacao.md → Integração com Azure Key Vault
-# - docs/15_artigo_tecnico.md → 3.7.2.2 Configuração do ambiente
+# - docs/09_runbook_implantacao.md → Integração com Azure Key Vault
+# - docs/17_artigo_tecnico.md → 3.7.2.2 Configuração do ambiente
 #
 # Objetivo de negócio:
 # - Centralizar credenciais no Azure Key Vault
@@ -135,7 +135,7 @@ SOURCE_FILE_NAME = "DFP.xlsx"
 # Referência:
 # - docs/02_arquitetura.md → Separação entre camadas (Storage vs Unity Catalog)
 # - docs/03_desenvolvimento.md → Estrutura da camada Bronze
-# - docs/15_artigo_tecnico.md → 3.7.2.3 Definição de caminhos
+# - docs/17_artigo_tecnico.md → 3.7.2.3 Definição de caminhos
 #
 # Objetivo técnico:
 # - Separar camada física (ADLS) da camada lógica (Unity Catalog)
@@ -178,7 +178,7 @@ log("Iniciando ingestão Bronze - DFP")
 # Referência:
 # - docs/03_desenvolvimento.md → Transformações técnicas na camada Bronze
 # - docs/02_arquitetura.md → Padronização mínima (Bronze Layer)
-# - docs/15_artigo_tecnico.md → 3.7.2.4 Padronização de colunas
+# - docs/17_artigo_tecnico.md → 3.7.2.4 Padronização de colunas
 #
 # Objetivo de negócio:
 # - Garantir consistência entre fontes de dados
@@ -223,8 +223,8 @@ def normalize_column_name(column_name):
 #
 # Referência:
 # - docs/07_governanca.md → Controle de acesso e autenticação
-# - docs/08_runbook_implantacao.md → App Registration e OAuth2
-# - docs/15_artigo_tecnico.md → 3.7.2.6 Autenticação SharePoint
+# - docs/09_runbook_implantacao.md → App Registration e OAuth2
+# - docs/17_artigo_tecnico.md → 3.7.2.6 Autenticação SharePoint
 #
 # Objetivo de negócio:
 # - Garantir ingestão automatizada da fonte oficial (SharePoint)
@@ -267,7 +267,7 @@ headers = {
 # Referência:
 # - docs/03_desenvolvimento.md → Ingestão de dados externos
 # - docs/02_arquitetura.md → Integração de fontes (SharePoint → Bronze)
-# - docs/15_artigo_tecnico.md → 3.7.2.7 Leitura do arquivo
+# - docs/17_artigo_tecnico.md → 3.7.2.7 Leitura do arquivo
 #
 # Objetivo técnico:
 # - Carregar dados diretamente em memória
@@ -296,7 +296,7 @@ response.raise_for_status()
 #
 # Referência:
 # - docs/03_desenvolvimento.md → Ingestão Bronze (Excel → Pandas → Spark)
-# - docs/15_artigo_tecnico.md → 3.7.2.7 Leitura do arquivo
+# - docs/17_artigo_tecnico.md → 3.7.2.7 Leitura do arquivo
 #
 # Objetivo:
 # - Ler arquivo em memória sem persistência local
@@ -336,7 +336,7 @@ pdf.columns = [
 # Referência:
 # - docs/02_arquitetura.md → Uso de Spark na camada Bronze
 # - docs/03_desenvolvimento.md → Processamento distribuído
-# - docs/15_artigo_tecnico.md → 3.7.2.8 Conversão para Spark
+# - docs/17_artigo_tecnico.md → 3.7.2.8 Conversão para Spark
 #
 # Objetivo de negócio:
 # - Habilitar processamento distribuído
@@ -356,7 +356,7 @@ df = spark.createDataFrame(pdf)
 # Referência:
 # - docs/07_governanca.md → Data lineage e auditoria
 # - docs/05_entrega_valor.md → Rastreabilidade dos dados
-# - docs/15_artigo_tecnico.md → 3.7.2.9 Metadados de governança
+# - docs/17_artigo_tecnico.md → 3.7.2.9 Metadados de governança
 #
 # Objetivo de negócio:
 # - Garantir rastreabilidade (origem e timestamp)
@@ -378,7 +378,7 @@ df = (
 # Referência:
 # - docs/02_arquitetura.md → Bronze Layer (Delta Lake)
 # - docs/03_desenvolvimento.md → Persistência em formato Delta
-# - docs/15_artigo_tecnico.md → 3.7.2.10 Persistência na Bronze
+# - docs/17_artigo_tecnico.md → 3.7.2.10 Persistência na Bronze
 #
 # Objetivo de negócio:
 # - Armazenar dados raw estruturados
@@ -399,7 +399,7 @@ df.write.format("delta") \
 #
 # Referência:
 # - docs/07_governanca.md → Unity Catalog e governança centralizada
-# - docs/15_artigo_tecnico.md → 3.7.2.10 Persistência na Bronze
+# - docs/17_artigo_tecnico.md → 3.7.2.10 Persistência na Bronze
 #
 # Objetivo:
 # - Registrar tabela governada
@@ -425,7 +425,7 @@ spark.sql(
 #
 # Referência:
 # - docs/06_operacao_plataforma.md → Validação de cargas
-# - docs/15_artigo_tecnico.md → 3.7.2.11 Validação e encerramento
+# - docs/17_artigo_tecnico.md → 3.7.2.11 Validação e encerramento
 #
 # Objetivo:
 # - Garantir execução bem-sucedida do pipeline
@@ -443,7 +443,7 @@ log(f"Registros carregados: {record_count}")
 #
 # Referência:
 # - docs/06_operacao_plataforma.md → Encerramento operacional
-# - docs/15_artigo_tecnico.md → 3.7.2.11 Validação e encerramento
+# - docs/17_artigo_tecnico.md → 3.7.2.11 Validação e encerramento
 #
 # =========================================================
 

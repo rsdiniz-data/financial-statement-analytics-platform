@@ -6,7 +6,7 @@ Este artigo apresenta a construção da solução **Financial Statement Analytic
 
 ## 🔗 Acesso ao artigo
 
-👉 [Ler no LinkedIn](https://www.linkedin.com/...)
+👉 [Ler no LinkedIn](https://www.linkedin.com/pulse/construindo-uma-plataforma-de-engenharia-dados-microsoft-diniz-tllpf/)
 
 ---
 
